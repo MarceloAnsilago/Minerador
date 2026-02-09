@@ -148,6 +148,361 @@ if "saldo_minimo_operacoes_negativas" not in st.session_state:
 if "saida_temporal_salva" not in st.session_state:
     st.session_state.saida_temporal_salva = False
 
+if "tipo_calculo_gradiente_linear" not in st.session_state:
+    st.session_state.tipo_calculo_gradiente_linear = "Em pontos"
+
+if "quantidade_niveis_gradiente_linear" not in st.session_state:
+    st.session_state.quantidade_niveis_gradiente_linear = 0
+
+if "distancia_niveis_gradiente_linear" not in st.session_state:
+    st.session_state.distancia_niveis_gradiente_linear = 0
+
+if "volume_ordens_gradiente_linear" not in st.session_state:
+    st.session_state.volume_ordens_gradiente_linear = 0
+
+if "alvo_parcial_gradiente_linear" not in st.session_state:
+    st.session_state.alvo_parcial_gradiente_linear = 0
+
+if "limite_entradas_gradiente_linear" not in st.session_state:
+    st.session_state.limite_entradas_gradiente_linear = 0
+
+if "reposicionar_ordem_gradiente_linear" not in st.session_state:
+    st.session_state.reposicionar_ordem_gradiente_linear = 0
+
+if "gradiente_linear_salvo" not in st.session_state:
+    st.session_state.gradiente_linear_salvo = False
+
+if "tempo_grafico_vela_filtro" not in st.session_state:
+    st.session_state.tempo_grafico_vela_filtro = "Corrente"
+
+if "tamanho_minimo_vela_filtro" not in st.session_state:
+    st.session_state.tamanho_minimo_vela_filtro = 0
+
+if "tamanho_maximo_vela_filtro" not in st.session_state:
+    st.session_state.tamanho_maximo_vela_filtro = 0
+
+if "minimo_corpo_vela_filtro" not in st.session_state:
+    st.session_state.minimo_corpo_vela_filtro = 0
+
+if "maximo_corpo_vela_filtro" not in st.session_state:
+    st.session_state.maximo_corpo_vela_filtro = 0
+
+if "vela_filtro_salvo" not in st.session_state:
+    st.session_state.vela_filtro_salvo = False
+
+if "canal_bandas_indicador" not in st.session_state:
+    st.session_state.canal_bandas_indicador = "Nao usar"
+
+if "canal_bandas_entrada" not in st.session_state:
+    st.session_state.canal_bandas_entrada = "Nao usar"
+
+if "canal_bandas_sentido" not in st.session_state:
+    st.session_state.canal_bandas_sentido = "Tendencia"
+
+if "canal_bandas_saida" not in st.session_state:
+    st.session_state.canal_bandas_saida = "Nao usar"
+
+if "cruzamento_sinal_rapido" not in st.session_state:
+    st.session_state.cruzamento_sinal_rapido = "Nao usar"
+
+if "cruzamento_sinal_lento" not in st.session_state:
+    st.session_state.cruzamento_sinal_lento = "Nao usar"
+
+if "cruzamento_entrada" not in st.session_state:
+    st.session_state.cruzamento_entrada = "Nao usar"
+
+if "cruzamento_sentido" not in st.session_state:
+    st.session_state.cruzamento_sentido = "Tendencia"
+
+if "cruzamento_saida" not in st.session_state:
+    st.session_state.cruzamento_saida = "Nao usar"
+
+if "sobrecompra_venda_indicador" not in st.session_state:
+    st.session_state.sobrecompra_venda_indicador = "Nao usar"
+
+if "sobrecompra_venda_entrada" not in st.session_state:
+    st.session_state.sobrecompra_venda_entrada = "Nao usar"
+
+if "sobrecompra_nivel" not in st.session_state:
+    st.session_state.sobrecompra_nivel = 2
+
+if "sobrevenda_nivel" not in st.session_state:
+    st.session_state.sobrevenda_nivel = 2
+
+if "sobrecompra_venda_sentido" not in st.session_state:
+    st.session_state.sobrecompra_venda_sentido = "Tendencia"
+
+if "sobrecompra_venda_saida" not in st.session_state:
+    st.session_state.sobrecompra_venda_saida = "Nao usar"
+
+if "sinais_prontos_salvo" not in st.session_state:
+    st.session_state.sinais_prontos_salvo = False
+
+if "resumo_validacao_final_salvo" not in st.session_state:
+    st.session_state.resumo_validacao_final_salvo = False
+
+if "indicador_escolha_1" not in st.session_state:
+    st.session_state.indicador_escolha_1 = "Não usar"
+
+if "indicador_escolha_2" not in st.session_state:
+    st.session_state.indicador_escolha_2 = "Não usar"
+
+if "indicador_escolha_3" not in st.session_state:
+    st.session_state.indicador_escolha_3 = "Não usar"
+
+if "indicador_escolha_4" not in st.session_state:
+    st.session_state.indicador_escolha_4 = "Não usar"
+
+_migracao_indicadores = {
+    "Nao usar": "Não usar",
+    "**Regressao": "**Regressão",
+    "**Afastamento da media": "**Afastamento da média",
+    "**Desvio Medio": "**Desvio Médio",
+    "Media Movel": "Média Móvel",
+    "Estocastico": "Estocástico",
+    "Desvio Padrao": "Desvio Padrão",
+    "Acumulacao/Distribuicao (A/D)": "Acumulação/Distribuição (A/D)",
+}
+for _k in ("indicador_escolha_1", "indicador_escolha_2", "indicador_escolha_3", "indicador_escolha_4"):
+    _v = st.session_state.get(_k)
+    if _v in _migracao_indicadores:
+        st.session_state[_k] = _migracao_indicadores[_v]
+
+if "escolher_indicadores_salvo" not in st.session_state:
+    st.session_state.escolher_indicadores_salvo = False
+
+if "configurar_indicadores_salvo" not in st.session_state:
+    st.session_state.configurar_indicadores_salvo = False
+
+if "sec_modo_edicao" not in st.session_state:
+    st.session_state.sec_modo_edicao = "Avançado"
+
+if "sec_tipo_vela" not in st.session_state:
+    st.session_state.sec_tipo_vela = "Completas"
+
+if "sec_estrategia" not in st.session_state:
+    st.session_state.sec_estrategia = "Entrada compra (1)"
+
+for _i in range(1, 6):
+    _op_padrao = "SE" if _i == 1 else "E"
+    if f"sec_regra_{_i}_operador_logico" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_operador_logico"] = _op_padrao
+
+    if f"sec_regra_{_i}_ref_esquerda" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_ref_esquerda"] = "Não usar"
+
+    if f"sec_regra_{_i}_vela_esquerda" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_vela_esquerda"] = "Vela atual"
+
+    if f"sec_regra_{_i}_operador_comp" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_operador_comp"] = "Igual que"
+
+    if f"sec_regra_{_i}_ref_direita" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_ref_direita"] = "Não usar"
+
+    if f"sec_regra_{_i}_vela_direita" not in st.session_state:
+        st.session_state[f"sec_regra_{_i}_vela_direita"] = "Vela atual"
+
+if "sinais_entrada_compra_salvo" not in st.session_state:
+    st.session_state.sinais_entrada_compra_salvo = False
+
+if "sev_modo_edicao" not in st.session_state:
+    st.session_state.sev_modo_edicao = "Avançado"
+
+if "sev_tipo_vela" not in st.session_state:
+    st.session_state.sev_tipo_vela = "Completas"
+
+if "sev_estrategia" not in st.session_state:
+    st.session_state.sev_estrategia = "Entrada venda (1)"
+
+for _i in range(1, 6):
+    _op_padrao = "SE" if _i == 1 else "E"
+    if f"sev_regra_{_i}_operador_logico" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_operador_logico"] = _op_padrao
+
+    if f"sev_regra_{_i}_ref_esquerda" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_ref_esquerda"] = "Não usar"
+
+    if f"sev_regra_{_i}_vela_esquerda" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_vela_esquerda"] = "Vela atual"
+
+    if f"sev_regra_{_i}_operador_comp" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_operador_comp"] = "Igual que"
+
+    if f"sev_regra_{_i}_ref_direita" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_ref_direita"] = "Não usar"
+
+    if f"sev_regra_{_i}_vela_direita" not in st.session_state:
+        st.session_state[f"sev_regra_{_i}_vela_direita"] = "Vela atual"
+
+if "sinais_entrada_venda_salvo" not in st.session_state:
+    st.session_state.sinais_entrada_venda_salvo = False
+
+if "limites_robo_historico" not in st.session_state:
+    st.session_state.limites_robo_historico = "Desabilitado"
+
+if "limites_robo_calculo" not in st.session_state:
+    st.session_state.limites_robo_calculo = "Financeiro"
+
+if "limites_robo_vencedoras" not in st.session_state:
+    st.session_state.limites_robo_vencedoras = 0
+
+if "limites_robo_perdedoras" not in st.session_state:
+    st.session_state.limites_robo_perdedoras = 0
+
+if "limites_robo_limite_total" not in st.session_state:
+    st.session_state.limites_robo_limite_total = 0
+
+if "limites_robo_meta_ganho" not in st.session_state:
+    st.session_state.limites_robo_meta_ganho = 0
+
+if "limites_robo_encerrar_meta_ganho" not in st.session_state:
+    st.session_state.limites_robo_encerrar_meta_ganho = "Sim"
+
+if "limites_robo_limite_perda" not in st.session_state:
+    st.session_state.limites_robo_limite_perda = 0
+
+if "limites_robo_encerrar_limite_perda" not in st.session_state:
+    st.session_state.limites_robo_encerrar_limite_perda = "Sim"
+
+if "limites_robo_rebaixamento" not in st.session_state:
+    st.session_state.limites_robo_rebaixamento = 0
+
+if "limites_robo_encerrar_rebaixamento" not in st.session_state:
+    st.session_state.limites_robo_encerrar_rebaixamento = "Não"
+
+if "limites_robo_gatilho_rebaixamento" not in st.session_state:
+    st.session_state.limites_robo_gatilho_rebaixamento = 0
+
+if "limites_robo_recuperacao" not in st.session_state:
+    st.session_state.limites_robo_recuperacao = 0
+
+if "limites_robo_encerrar_recuperacao" not in st.session_state:
+    st.session_state.limites_robo_encerrar_recuperacao = "Não"
+
+if "limites_robo_gatilho_recuperacao" not in st.session_state:
+    st.session_state.limites_robo_gatilho_recuperacao = 0
+
+if "limites_robo_salvo" not in st.session_state:
+    st.session_state.limites_robo_salvo = False
+
+if "conta_historico" not in st.session_state:
+    st.session_state.conta_historico = "Desabilitado"
+
+if "conta_calculo" not in st.session_state:
+    st.session_state.conta_calculo = "Financeiro"
+
+if "conta_filtro_ativo" not in st.session_state:
+    st.session_state.conta_filtro_ativo = "Não"
+
+if "conta_excluir_manuais" not in st.session_state:
+    st.session_state.conta_excluir_manuais = "Não"
+
+if "conta_filtrar_robos" not in st.session_state:
+    st.session_state.conta_filtrar_robos = "Não"
+
+if "conta_id_minimo" not in st.session_state:
+    st.session_state.conta_id_minimo = 0
+
+if "conta_id_maximo" not in st.session_state:
+    st.session_state.conta_id_maximo = 0
+
+if "conta_meta_ganho" not in st.session_state:
+    st.session_state.conta_meta_ganho = 0
+
+if "conta_encerrar_meta_ganho" not in st.session_state:
+    st.session_state.conta_encerrar_meta_ganho = "Sim"
+
+if "conta_limite_perda" not in st.session_state:
+    st.session_state.conta_limite_perda = 0
+
+if "conta_encerrar_limite_perda" not in st.session_state:
+    st.session_state.conta_encerrar_limite_perda = "Sim"
+
+if "conta_rebaixamento" not in st.session_state:
+    st.session_state.conta_rebaixamento = 0
+
+if "conta_encerrar_rebaixamento" not in st.session_state:
+    st.session_state.conta_encerrar_rebaixamento = "Não"
+
+if "conta_gatilho_rebaixamento" not in st.session_state:
+    st.session_state.conta_gatilho_rebaixamento = 0
+
+if "conta_recuperacao" not in st.session_state:
+    st.session_state.conta_recuperacao = 0
+
+if "conta_encerrar_recuperacao" not in st.session_state:
+    st.session_state.conta_encerrar_recuperacao = "Não"
+
+if "conta_gatilho_recuperacao" not in st.session_state:
+    st.session_state.conta_gatilho_recuperacao = 0
+
+if "permissoes_gestao_conta_salvo" not in st.session_state:
+    st.session_state.permissoes_gestao_conta_salvo = False
+
+if "ajuste_cancelar_pendente_entrada_sinal_oposto" not in st.session_state:
+    st.session_state.ajuste_cancelar_pendente_entrada_sinal_oposto = "Não"
+
+if "ajuste_reposicionar_stoploss_aumento_favor" not in st.session_state:
+    st.session_state.ajuste_reposicionar_stoploss_aumento_favor = "Não"
+
+if "ajuste_reposicionar_takeprofit_aumento_contra" not in st.session_state:
+    st.session_state.ajuste_reposicionar_takeprofit_aumento_contra = "Não"
+
+if "ajuste_movimentar_stoploss_preco_medio" not in st.session_state:
+    st.session_state.ajuste_movimentar_stoploss_preco_medio = "Não"
+
+if "ajuste_movimentar_takeprofit_preco_medio" not in st.session_state:
+    st.session_state.ajuste_movimentar_takeprofit_preco_medio = "Não"
+
+if "ajuste_usar_preco_medio_parciais" not in st.session_state:
+    st.session_state.ajuste_usar_preco_medio_parciais = "Não"
+
+if "ajuste_impedir_saida_vela_entrada" not in st.session_state:
+    st.session_state.ajuste_impedir_saida_vela_entrada = "Não"
+
+if "ajuste_impedir_entrada_vela_saida" not in st.session_state:
+    st.session_state.ajuste_impedir_entrada_vela_saida = "Não"
+
+if "ajuste_recalcular_preco_medio_saidas_parciais" not in st.session_state:
+    st.session_state.ajuste_recalcular_preco_medio_saidas_parciais = "Não"
+
+if "ajustes_finais_salvo" not in st.session_state:
+    st.session_state.ajustes_finais_salvo = False
+
+if "comp_enviar_ordem_outro_ativo" not in st.session_state:
+    st.session_state.comp_enviar_ordem_outro_ativo = "Não"
+
+if "comp_procurar_entrada_vela_seguinte_saida" not in st.session_state:
+    st.session_state.comp_procurar_entrada_vela_seguinte_saida = "Não"
+
+if "comp_procurar_saida_vela_seguinte_entrada" not in st.session_state:
+    st.session_state.comp_procurar_saida_vela_seguinte_entrada = "Não"
+
+if "comp_saldo_ajuste" not in st.session_state:
+    st.session_state.comp_saldo_ajuste = 0
+
+if "complementos_salvo" not in st.session_state:
+    st.session_state.complementos_salvo = False
+
+if "final_exibir_indicadores" not in st.session_state:
+    st.session_state.final_exibir_indicadores = False
+
+if "final_criar_painel_boleta" not in st.session_state:
+    st.session_state.final_criar_painel_boleta = False
+
+if "final_criar_log_expert" not in st.session_state:
+    st.session_state.final_criar_log_expert = False
+
+if "final_criar_etiquetas_personalizadas" not in st.session_state:
+    st.session_state.final_criar_etiquetas_personalizadas = False
+
+if "final_alterar_layout_grafico" not in st.session_state:
+    st.session_state.final_alterar_layout_grafico = False
+
+if "finalizacao_salvo" not in st.session_state:
+    st.session_state.finalizacao_salvo = False
+
 if "referencia_tempo_filtro" not in st.session_state:
     st.session_state.referencia_tempo_filtro = "Segundos"
 
@@ -285,6 +640,36 @@ if "volume_favor_5" not in st.session_state:
 
 if "aumento_favor_salvo" not in st.session_state:
     st.session_state.aumento_favor_salvo = False
+
+if "tipo_calculo_saidas_parciais" not in st.session_state:
+    st.session_state.tipo_calculo_saidas_parciais = "Em pontos"
+
+if "distancia_parcial_1" not in st.session_state:
+    st.session_state.distancia_parcial_1 = 0
+
+if "volume_parcial_1" not in st.session_state:
+    st.session_state.volume_parcial_1 = 0
+
+if "distancia_parcial_2" not in st.session_state:
+    st.session_state.distancia_parcial_2 = 0
+
+if "volume_parcial_2" not in st.session_state:
+    st.session_state.volume_parcial_2 = 0
+
+if "distancia_parcial_3" not in st.session_state:
+    st.session_state.distancia_parcial_3 = 0
+
+if "volume_parcial_3" not in st.session_state:
+    st.session_state.volume_parcial_3 = 0
+
+if "distancia_parcial_4" not in st.session_state:
+    st.session_state.distancia_parcial_4 = 0
+
+if "volume_parcial_4" not in st.session_state:
+    st.session_state.volume_parcial_4 = 0
+
+if "saidas_parciais_salvas" not in st.session_state:
+    st.session_state.saidas_parciais_salvas = False
 
 if st.session_state.etapa == 1:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
@@ -1052,4 +1437,1247 @@ if st.session_state.etapa == 13:
         with nav_dir:
             if st.button("Salvar", use_container_width=True):
                 st.session_state.aumento_favor_salvo = True
-                st.success("Configuracao de aumento a favor salva.")
+                st.session_state.etapa = 14
+                st.rerun()
+
+if st.session_state.etapa == 14:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>SAIDAS PARCIAIS</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Determine a referencia para a distancia das parciais</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.selectbox(
+            "Tipo de calculo da distancia",
+            ["Em pontos", "Percentual"],
+            key="tipo_calculo_saidas_parciais",
+        )
+
+        st.markdown(
+            "<p style='text-align: center;'>Distancias positivas serao ordens limites no ganho e negativas, ordens gatilhos no loss</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<p style='text-align: center;'><strong>Saidas parciais</strong></p>", unsafe_allow_html=True)
+
+        p1_col1, p1_col2 = st.columns(2)
+        with p1_col1:
+            st.number_input("Distancia parcial 1", step=1, key="distancia_parcial_1")
+        with p1_col2:
+            st.number_input("Volume 1", min_value=0, step=1, key="volume_parcial_1")
+
+        p2_col1, p2_col2 = st.columns(2)
+        with p2_col1:
+            st.number_input("Distancia parcial 2", step=1, key="distancia_parcial_2")
+        with p2_col2:
+            st.number_input("Volume 2", min_value=0, step=1, key="volume_parcial_2")
+
+        p3_col1, p3_col2 = st.columns(2)
+        with p3_col1:
+            st.number_input("Distancia parcial 3", step=1, key="distancia_parcial_3")
+        with p3_col2:
+            st.number_input("Volume 3", min_value=0, step=1, key="volume_parcial_3")
+
+        p4_col1, p4_col2 = st.columns(2)
+        with p4_col1:
+            st.number_input("Distancia parcial 4", step=1, key="distancia_parcial_4")
+        with p4_col2:
+            st.number_input("Volume 4", min_value=0, step=1, key="volume_parcial_4")
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 13
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.saidas_parciais_salvas = True
+                st.session_state.etapa = 15
+                st.rerun()
+
+if st.session_state.etapa == 15:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>GRADIENTE LINEAR</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Escolha a referencia para distancias dos alvos e ordens do gradiente</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.selectbox(
+            "Tipo de calculo da distancia",
+            ["Em pontos", "Percentual"],
+            key="tipo_calculo_gradiente_linear",
+        )
+
+        st.markdown(
+            "<p style='text-align: center;'>O gradiente sera recorrente ou limitado a quantidade de ordens definido</p>",
+            unsafe_allow_html=True,
+        )
+
+        c1, c2 = st.columns(2)
+        with c1:
+            st.number_input(
+                "Quantidade de niveis",
+                min_value=0,
+                step=1,
+                key="quantidade_niveis_gradiente_linear",
+            )
+        with c2:
+            st.number_input(
+                "Distancia dos niveis",
+                min_value=0,
+                step=1,
+                key="distancia_niveis_gradiente_linear",
+            )
+
+        c3, c4 = st.columns(2)
+        with c3:
+            st.number_input(
+                "Volume das ordens",
+                min_value=0,
+                step=1,
+                key="volume_ordens_gradiente_linear",
+            )
+        with c4:
+            st.number_input(
+                "Alvo parcial",
+                min_value=0,
+                step=1,
+                key="alvo_parcial_gradiente_linear",
+            )
+
+        c5, c6 = st.columns(2)
+        with c5:
+            st.number_input(
+                "Limite de entradas",
+                min_value=0,
+                step=1,
+                key="limite_entradas_gradiente_linear",
+            )
+        with c6:
+            st.number_input(
+                "Reposicionar ordem",
+                min_value=0,
+                step=1,
+                key="reposicionar_ordem_gradiente_linear",
+            )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 14
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.gradiente_linear_salvo = True
+                st.session_state.etapa = 16
+                st.rerun()
+
+if st.session_state.etapa == 16:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>FILTRO DE VELA</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>O tempo grafico da vela filtro nao precisa ser igual ao do grafico corrente</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.selectbox(
+            "Tempo grafico da vela",
+            [
+                "Corrente",
+                "1 Minuto (M1)",
+                "2 Minutos (M2)",
+                "3 Minutos (M3)",
+                "4 Minutos (M4)",
+                "5 Minutos (M5)",
+                "6 Minutos (M6)",
+                "10 Minutos (M10)",
+                "15 Minutos (M15)",
+                "30 Minutos (M30)",
+                "1 Hora (H1)",
+                "2 Horas (H2)",
+                "3 Horas (H3)",
+                "4 Horas (H4)",
+                "6 Horas (H6)",
+                "8 Horas (H8)",
+                "12 Horas (H12)",
+                "1 Dia (D1)",
+                "1 Semana (W1)",
+                "1 Mes (MN1)",
+            ],
+            key="tempo_grafico_vela_filtro",
+        )
+
+        st.markdown(
+            "<p style='text-align: center;'>Aplicado sempre antes de iniciar uma nova posicao</p>",
+            unsafe_allow_html=True,
+        )
+
+        c1, c2 = st.columns(2)
+        with c1:
+            st.number_input(
+                "Tamanho minimo da vela",
+                min_value=0,
+                step=1,
+                key="tamanho_minimo_vela_filtro",
+            )
+        with c2:
+            st.number_input(
+                "Tamanho maximo da vela",
+                min_value=0,
+                step=1,
+                key="tamanho_maximo_vela_filtro",
+            )
+
+        c3, c4 = st.columns(2)
+        with c3:
+            st.number_input(
+                "Minimo do corpo da vela",
+                min_value=0,
+                step=1,
+                key="minimo_corpo_vela_filtro",
+            )
+        with c4:
+            st.number_input(
+                "Maximo do corpo da vela",
+                min_value=0,
+                step=1,
+                key="maximo_corpo_vela_filtro",
+            )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 15
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.vela_filtro_salvo = True
+                st.session_state.etapa = 17
+                st.rerun()
+
+if st.session_state.etapa == 17:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>SINAIS PRONTOS</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Podera selecionar quais estrategias desejar ou combina-las para usar para sinais de entrada e/ou saida</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>CANAL DE BANDAS</h4>", unsafe_allow_html=True)
+
+        st.selectbox(
+            "Indicador",
+            ["Nao usar", "Bandas de Bollinger", "Envelopes", "Keltner", "Dochian", "Canal ATR"],
+            key="canal_bandas_indicador",
+        )
+
+        st.selectbox(
+            "Entrada",
+            [
+                "Nao usar",
+                "Fechou fora",
+                "Fechou dentro e saiu",
+                "Fechou dentro e fechou fora",
+                "Fechou fora e voltou",
+                "Fechou fora e fechou dentro",
+                "Estando fora",
+            ],
+            key="canal_bandas_entrada",
+        )
+
+        st.selectbox(
+            "Sentido",
+            ["Tendencia", "Contra Tendencia"],
+            key="canal_bandas_sentido",
+        )
+
+        st.selectbox(
+            "Saida",
+            [
+                "Nao usar",
+                "Cruzar o centro",
+                "Cruzar o centro e fechar",
+                "Cruzar banda oposta",
+                "Cruzar oposta e fechar",
+            ],
+            key="canal_bandas_saida",
+        )
+
+        st.markdown("<hr />", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>CRUZAMENTO DE SINAIS</h4>", unsafe_allow_html=True)
+
+        st.selectbox(
+            "Sinal rapido",
+            [
+                "Nao usar",
+                "Fechamento da vela",
+                "Abertura da vela",
+                "Maxima da vela",
+                "Minima da vela",
+                "Media movel",
+                "Vidya",
+                "Dema",
+                "Tema",
+                "Frama",
+            ],
+            key="cruzamento_sinal_rapido",
+        )
+
+        st.selectbox(
+            "Sinal lento",
+            [
+                "Nao usar",
+                "Fechamento da vela",
+                "Abertura da vela",
+                "Maxima da vela",
+                "Minima da vela",
+                "Media movel",
+                "Vidya",
+                "Dema",
+                "Tema",
+                "Frama",
+            ],
+            key="cruzamento_sinal_lento",
+        )
+
+        st.selectbox(
+            "Entrada",
+            ["Nao usar", "Cruzamento", "Cruzamento e fechando"],
+            key="cruzamento_entrada",
+        )
+
+        st.selectbox(
+            "Sentido",
+            ["Tendencia", "Contra Tendencia"],
+            key="cruzamento_sentido",
+        )
+
+        st.selectbox(
+            "Saida",
+            ["Nao usar", "Cruzamento oposto", "Cruzar oposto e fechar"],
+            key="cruzamento_saida",
+        )
+
+        st.markdown("<hr />", unsafe_allow_html=True)
+        st.markdown("<h4 style='text-align: center;'>SOBRE COMPRADO / VENDIDO</h4>", unsafe_allow_html=True)
+
+        st.selectbox(
+            "Indicador",
+            [
+                "Nao usar",
+                "MACD",
+                "Estocastico",
+                "RSI",
+                "Money Flow Index (MFI)",
+                "Bears Power",
+                "Bulls Power",
+                "Chaikin Oscilador",
+                "Accelerator Oscilador",
+                "Awesome Oscilador",
+                "Commodity Channel Index (CCI)",
+                "DeMarker",
+                "Regressao",
+                "Afastamento da media",
+                "Desvio medio",
+            ],
+            key="sobrecompra_venda_indicador",
+        )
+
+        st.selectbox(
+            "Entrada",
+            [
+                "Nao usar",
+                "Fechou fora",
+                "Fechou dentro e saiu",
+                "Fechou dentro e fechou fora",
+                "Fechou fora e voltou",
+                "Fechou fora e fechou dentro",
+                "Estando fora",
+            ],
+            key="sobrecompra_venda_entrada",
+        )
+
+        n1, n2 = st.columns(2)
+        with n1:
+            st.number_input("Sobrecompra", step=1, key="sobrecompra_nivel")
+        with n2:
+            st.number_input("Sobrevenda", step=1, key="sobrevenda_nivel")
+
+        st.selectbox(
+            "Sentido",
+            ["Tendencia", "Contra Tendencia"],
+            key="sobrecompra_venda_sentido",
+        )
+
+        st.selectbox(
+            "Saida",
+            [
+                "Nao usar",
+                "Cruzar o centro",
+                "Cruzar o centro e fechar",
+                "Cruzar banda oposta",
+                "Cruzar oposta e fechar",
+            ],
+            key="sobrecompra_venda_saida",
+        )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 16
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.sinais_prontos_salvo = True
+                st.session_state.etapa = 18
+                st.rerun()
+
+if st.session_state.etapa == 18:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown(
+            "<p style='text-align: center;'>Voce ainda podera alterar todos os parametros diretamente em seu robo quando estiver pronto</p>",
+            unsafe_allow_html=True,
+        )
+
+        def bloco_info(texto_principal: str, texto_auxiliar: str) -> None:
+            st.markdown(
+                f"""
+                <div style="border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 10px; padding: 14px;">
+                    <div style="font-size: 18px; font-weight: 600;">{texto_principal}</div>
+                    <div style="font-size: 12px; opacity: 0.75; margin-top: 4px;">{texto_auxiliar}</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        r1_c1, r1_c2 = st.columns(2)
+        with r1_c1:
+            bloco_info("Nao selecionado", "Dados nao requeridos")
+        with r1_c2:
+            bloco_info("Nao selecionado/Nao selecionado", "Dados nao requeridos")
+
+        r2_c1, r2_c2 = st.columns(2)
+        with r2_c1:
+            bloco_info("Nao selecionado", "Dados nao requeridos")
+        with r2_c2:
+            bloco_info("Nao selecionado", "Dados nao requeridos")
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 17
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.resumo_validacao_final_salvo = True
+                st.session_state.etapa = 19
+                st.rerun()
+
+if st.session_state.etapa == 19:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>ESCOLHER INDICADORES</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Você poderá selecionar até 4 indicadores para utilizar como sinais e/ou filtros de entrada e/ou saída</p>",
+            unsafe_allow_html=True,
+        )
+
+        opcoes_indicadores = [
+            "Não usar",
+            "***Externo",
+            "**Keltner",
+            "**Dochian",
+            "**Regressão",
+            "**Afastamento da média",
+            "**Desvio Médio",
+            "**Canal ATR",
+            "Média Móvel",
+            "Bandas de Bollinger",
+            "MACD",
+            "Envelopes",
+            "Estocástico",
+            "Relative Strength Index (RSI)",
+            "Desvio Padrão",
+            "Volume",
+            "Average True Range (ATR)",
+            "Parabolic SAR",
+            "Fractal",
+            "On Balance Volume (OBV)",
+            "Acumulação/Distribuição (A/D)",
+            "Money Flow Index (MFI)",
+            "Vidya",
+            "Dema",
+            "Tema",
+            "Frama",
+            "Trix",
+            "Bears Power",
+            "Bulls Power",
+            "Chaikin Oscilador",
+            "Accelerator Oscilador",
+            "Awesome Oscilador",
+            "Commodity Channel Index (CCI)",
+            "DeMarker",
+            "Alligator",
+            "Nuvem de Ichimoku",
+            "Average Directional Index (ADX)",
+            "ADX Welles Wilder",
+            "Gator Oscilador",
+            "Williams Percent Range (WPR)",
+            "Market Facilitation Index",
+            "Momentum",
+            "Relative Vigor Index (RVI)",
+        ]
+
+        st.selectbox("Escolha o indicador [1]", opcoes_indicadores, key="indicador_escolha_1")
+        st.selectbox("Escolha o indicador [2]", opcoes_indicadores, key="indicador_escolha_2")
+        st.selectbox("Escolha o indicador [3]", opcoes_indicadores, key="indicador_escolha_3")
+        st.selectbox("Escolha o indicador [4]", opcoes_indicadores, key="indicador_escolha_4")
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 18
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.escolher_indicadores_salvo = True
+                st.session_state.etapa = 20
+                st.rerun()
+
+        if st.session_state.escolher_indicadores_salvo:
+            st.success("Indicadores salvos.")
+
+if st.session_state.etapa == 20:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>CONFIGURAR INDICADORES</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Você ainda poderá alterar todos os parâmetros diretamente em seu robô quando estiver pronto</p>",
+            unsafe_allow_html=True,
+        )
+
+        def bloco_status_indicador(numero: int, valor: str) -> None:
+            texto = f"[{numero}] Não selecionado" if valor == "Não usar" else f"[{numero}] {valor}"
+            st.markdown(
+                f"""
+                <div style="border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 10px; padding: 14px;">
+                    <div style="font-size: 18px; font-weight: 600;">{texto}</div>
+                    <div style="font-size: 12px; opacity: 0.75; margin-top: 4px;">Dados não requeridos</div>
+                </div>
+                """,
+                unsafe_allow_html=True,
+            )
+
+        r1_c1, r1_c2 = st.columns(2)
+        with r1_c1:
+            bloco_status_indicador(1, st.session_state.indicador_escolha_1)
+        with r1_c2:
+            bloco_status_indicador(2, st.session_state.indicador_escolha_2)
+
+        r2_c1, r2_c2 = st.columns(2)
+        with r2_c1:
+            bloco_status_indicador(3, st.session_state.indicador_escolha_3)
+        with r2_c2:
+            bloco_status_indicador(4, st.session_state.indicador_escolha_4)
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 19
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.configurar_indicadores_salvo = True
+                st.session_state.etapa = 21
+                st.rerun()
+
+        if st.session_state.configurar_indicadores_salvo:
+            st.success("Configuração de indicadores salva.")
+
+if st.session_state.etapa == 21:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>SINAIS ENTRADA COMPRA</h3>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>No modo de edição avançado, poderá multiplicar, dividir, somar ou subtrair os valores de referência</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Configurações gerais</h4>", unsafe_allow_html=True)
+
+        g1, g2, g3 = st.columns(3)
+        with g1:
+            st.selectbox("Modo de edição", ["Avançado", "Básico"], key="sec_modo_edicao")
+        with g2:
+            st.selectbox("Tipo de vela", ["Completas", "Simplificadas"], key="sec_tipo_vela")
+        with g3:
+            st.selectbox(
+                "Estratégia",
+                ["Entrada compra (1)", "Entrada compra (2)", "Entrada compra (3)"],
+                key="sec_estrategia",
+            )
+
+        st.markdown(
+            "<p style='text-align: center;'>Com a vela no modo completo, poderá selecionar qualquer vela do histórico</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Regras condicionais</h4>", unsafe_allow_html=True)
+
+        opcoes_operador_logico = ["SE", "E", "OU", "E SE", "OU SE", "E Também", "OU Também"]
+        opcoes_referencia = [
+            "Não usar",
+            "Valor absoluto",
+            "Valor em pontos",
+            "Preço de entrada",
+            "Preço Médio",
+            "Preço Atual",
+            "Fechamento da vela",
+            "Abertura da vela",
+            "Máxima da vela",
+            "Mínima da vela",
+            "Fechamento do dia",
+            "Abertura do dia",
+            "Máxima do dia",
+            "Mínima do dia",
+            "Tamanho da vela",
+            "Corpo da vela",
+            "Empty Value",
+        ]
+        opcoes_vela = ["Vela atual", "Vela anterior", "Penúltima vela", "Anti Penúltima"]
+        opcoes_operador_comp = [
+            "Maior que",
+            "Menor que",
+            "Maior ou igual que",
+            "Menor ou igual que",
+            "Igual que",
+            "Diferente de",
+            "Cruzar p/ cima de",
+            "Cruzar p/ baixo de",
+            "Cruzar & fechar acima de",
+            "Cruzar & fechar abaixo de",
+        ]
+
+        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+        with h1:
+            st.caption("Operador lógico")
+        with h2:
+            st.caption("Referência esquerda")
+        with h3:
+            st.caption("Vela (esq.)")
+        with h4:
+            st.caption("Operador")
+        with h5:
+            st.caption("Referência direita")
+        with h6:
+            st.caption("Vela (dir.)")
+
+        for i in range(1, 6):
+            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+            with c1:
+                st.selectbox(
+                    f"Operador lógico {i}",
+                    opcoes_operador_logico,
+                    key=f"sec_regra_{i}_operador_logico",
+                    label_visibility="collapsed",
+                )
+            with c2:
+                st.selectbox(
+                    f"Referência esquerda {i}",
+                    opcoes_referencia,
+                    key=f"sec_regra_{i}_ref_esquerda",
+                    label_visibility="collapsed",
+                )
+            with c3:
+                st.selectbox(
+                    f"Vela esquerda {i}",
+                    opcoes_vela,
+                    key=f"sec_regra_{i}_vela_esquerda",
+                    label_visibility="collapsed",
+                )
+            with c4:
+                st.selectbox(
+                    f"Operador de comparação {i}",
+                    opcoes_operador_comp,
+                    key=f"sec_regra_{i}_operador_comp",
+                    label_visibility="collapsed",
+                )
+            with c5:
+                st.selectbox(
+                    f"Referência direita {i}",
+                    opcoes_referencia,
+                    key=f"sec_regra_{i}_ref_direita",
+                    label_visibility="collapsed",
+                )
+            with c6:
+                st.selectbox(
+                    f"Vela direita {i}",
+                    opcoes_vela,
+                    key=f"sec_regra_{i}_vela_direita",
+                    label_visibility="collapsed",
+                )
+
+        st.info(
+            "As 5 linhas são cópias exatas da primeira. A lógica é condicional sequencial, usando operadores (SE, E, OU, etc.)."
+        )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 20
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.sinais_entrada_compra_salvo = True
+                st.session_state.etapa = 22
+                st.rerun()
+
+        if st.session_state.sinais_entrada_compra_salvo:
+            st.success("Configurações de sinais de entrada (compra) salvas.")
+
+if st.session_state.etapa == 22:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>SINAIS ENTRADA VENDA</h3>", unsafe_allow_html=True)
+        st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>No modo de edição básico, tem 4 opções de velas de referência</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Configurações gerais</h4>", unsafe_allow_html=True)
+
+        g1, g2, g3 = st.columns(3)
+        with g1:
+            st.selectbox("Modo de edição", ["Avançado", "Básico"], key="sev_modo_edicao")
+        with g2:
+            st.selectbox("Tipo de vela", ["Completas", "Simplificadas"], key="sev_tipo_vela")
+        with g3:
+            st.selectbox(
+                "Estratégia",
+                ["Entrada venda (1)", "Entrada venda (2)", "Entrada venda (3)"],
+                key="sev_estrategia",
+            )
+
+        st.markdown(
+            "<p style='text-align: center;'>Se deixar \"Não usar\" em uma das duas opções possíveis de cada linha, a linha será desconsiderada dos sinais</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Regras condicionais</h4>", unsafe_allow_html=True)
+
+        opcoes_operador_logico = ["SE", "E", "OU", "E SE", "OU SE", "E Também", "OU Também"]
+        opcoes_referencia = [
+            "Não usar",
+            "Valor absoluto",
+            "Valor em pontos",
+            "Preço de entrada",
+            "Preço Médio",
+            "Preço Atual",
+            "Fechamento da vela",
+            "Abertura da vela",
+            "Máxima da vela",
+            "Mínima da vela",
+            "Fechamento do dia",
+            "Abertura do dia",
+            "Máxima do dia",
+            "Mínima do dia",
+            "Tamanho da vela",
+            "Corpo da vela",
+            "Empty Value",
+        ]
+        opcoes_vela = ["Vela atual", "Vela anterior", "Penúltima vela", "Anti Penúltima"]
+        opcoes_operador_comp = [
+            "Maior que",
+            "Menor que",
+            "Maior ou igual que",
+            "Menor ou igual que",
+            "Igual que",
+            "Diferente de",
+            "Cruzar p/ cima de",
+            "Cruzar p/ baixo de",
+            "Cruzar & fechar acima de",
+            "Cruzar & fechar abaixo de",
+        ]
+
+        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+        with h1:
+            st.caption("Operador lógico")
+        with h2:
+            st.caption("Referência esquerda")
+        with h3:
+            st.caption("Vela (esq.)")
+        with h4:
+            st.caption("Operador")
+        with h5:
+            st.caption("Referência direita")
+        with h6:
+            st.caption("Vela (dir.)")
+
+        for i in range(1, 6):
+            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+            with c1:
+                st.selectbox(
+                    f"Operador lógico {i}",
+                    opcoes_operador_logico,
+                    key=f"sev_regra_{i}_operador_logico",
+                    label_visibility="collapsed",
+                )
+            with c2:
+                st.selectbox(
+                    f"Referência esquerda {i}",
+                    opcoes_referencia,
+                    key=f"sev_regra_{i}_ref_esquerda",
+                    label_visibility="collapsed",
+                )
+            with c3:
+                st.selectbox(
+                    f"Vela esquerda {i}",
+                    opcoes_vela,
+                    key=f"sev_regra_{i}_vela_esquerda",
+                    label_visibility="collapsed",
+                )
+            with c4:
+                st.selectbox(
+                    f"Operador de comparação {i}",
+                    opcoes_operador_comp,
+                    key=f"sev_regra_{i}_operador_comp",
+                    label_visibility="collapsed",
+                )
+            with c5:
+                st.selectbox(
+                    f"Referência direita {i}",
+                    opcoes_referencia,
+                    key=f"sev_regra_{i}_ref_direita",
+                    label_visibility="collapsed",
+                )
+            with c6:
+                st.selectbox(
+                    f"Vela direita {i}",
+                    opcoes_vela,
+                    key=f"sev_regra_{i}_vela_direita",
+                    label_visibility="collapsed",
+                )
+
+        st.info("As 5 linhas são cópias exatas da primeira. A lógica é condicional sequencial, usando operadores (SE, E, OU, etc.).")
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 21
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.sinais_entrada_venda_salvo = True
+                st.session_state.etapa = 23
+                st.rerun()
+
+        if st.session_state.sinais_entrada_venda_salvo:
+            st.success("Configurações de sinais de entrada (venda) salvas.")
+
+if st.session_state.etapa == 23:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>LIMITES DO ROBÔ</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Gerencie limite de ganho e perda para proteger sua conta bem como o cálculo de referência</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Referências das metas</h4>", unsafe_allow_html=True)
+
+        r1, r2 = st.columns(2)
+        with r1:
+            st.selectbox(
+                "Histórico",
+                ["Desabilitado", "Diário", "Semanal", "Mensal"],
+                key="limites_robo_historico",
+            )
+        with r2:
+            st.selectbox(
+                "Cálculo",
+                ["Financeiro", "Percentual"],
+                key="limites_robo_calculo",
+            )
+
+        st.markdown("<h4 style='text-align: center;'>Limite de operações</h4>", unsafe_allow_html=True)
+
+        l1, l2, l3 = st.columns(3)
+        with l1:
+            st.number_input("Vencedoras", min_value=0, step=1, key="limites_robo_vencedoras")
+        with l2:
+            st.number_input("Perdedoras", min_value=0, step=1, key="limites_robo_perdedoras")
+        with l3:
+            st.number_input("Limite total", min_value=0, step=1, key="limites_robo_limite_total")
+
+        st.markdown("<h4 style='text-align: center;'>Metas financeiras e controle de encerramento</h4>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>A referência equivale a moeda base da sua conta na corretora</p>",
+            unsafe_allow_html=True,
+        )
+
+        m1, m2 = st.columns(2)
+        with m1:
+            st.number_input("Meta de ganho", min_value=0, step=1, key="limites_robo_meta_ganho")
+        with m2:
+            st.selectbox(
+                "Encerrar no trade (Meta de ganho)",
+                ["Sim", "Não"],
+                key="limites_robo_encerrar_meta_ganho",
+            )
+
+        p1, p2 = st.columns(2)
+        with p1:
+            st.number_input("Limite de perda", min_value=0, step=1, key="limites_robo_limite_perda")
+        with p2:
+            st.selectbox(
+                "Encerrar no trade (Limite de perda)",
+                ["Sim", "Não"],
+                key="limites_robo_encerrar_limite_perda",
+            )
+
+        rb1, rb2 = st.columns(2)
+        with rb1:
+            st.number_input("Rebaixamento", min_value=0, step=1, key="limites_robo_rebaixamento")
+        with rb2:
+            st.selectbox(
+                "Encerrar no trade (Rebaixamento)",
+                ["Não", "Sim"],
+                key="limites_robo_encerrar_rebaixamento",
+            )
+
+        rb3, rb4 = st.columns(2)
+        with rb3:
+            st.number_input(
+                "Gatilho (Rebaixamento)",
+                min_value=0,
+                step=1,
+                key="limites_robo_gatilho_rebaixamento",
+            )
+        with rb4:
+            st.number_input("Recuperação", min_value=0, step=1, key="limites_robo_recuperacao")
+
+        rc1, rc2 = st.columns(2)
+        with rc1:
+            st.selectbox(
+                "Encerrar no trade (Recuperação)",
+                ["Não", "Sim"],
+                key="limites_robo_encerrar_recuperacao",
+            )
+        with rc2:
+            st.number_input(
+                "Gatilho (Recuperação)",
+                min_value=0,
+                step=1,
+                key="limites_robo_gatilho_recuperacao",
+            )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 22
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.limites_robo_salvo = True
+                st.session_state.etapa = 24
+                st.rerun()
+
+        if st.session_state.limites_robo_salvo:
+            st.success("Limites do robô salvos.")
+
+if st.session_state.etapa == 24:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown(
+            "<p style='text-align: center;'>Gerencie toda a conta combinando com as permissões do robô</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Referências das metas (nível conta)</h4>", unsafe_allow_html=True)
+
+        r1, r2 = st.columns(2)
+        with r1:
+            st.selectbox(
+                "Histórico",
+                ["Desabilitado", "Diário", "Semanal", "Mensal"],
+                key="conta_historico",
+            )
+        with r2:
+            st.selectbox(
+                "Cálculo",
+                ["Financeiro", "Percentual"],
+                key="conta_calculo",
+            )
+
+        st.markdown("<h4 style='text-align: center;'>Seleção de filtros</h4>", unsafe_allow_html=True)
+
+        f1, f2, f3 = st.columns(3)
+        with f1:
+            st.selectbox("Filtro de ativo", ["Não", "Sim"], key="conta_filtro_ativo")
+        with f2:
+            st.selectbox("Excluir manuais", ["Não", "Sim"], key="conta_excluir_manuais")
+        with f3:
+            st.selectbox("Filtrar robôs", ["Não", "Sim"], key="conta_filtrar_robos")
+
+        id1, id2 = st.columns(2)
+        with id1:
+            st.number_input("ID mínimo", min_value=0, step=1, key="conta_id_minimo")
+        with id2:
+            st.number_input("ID máximo", min_value=0, step=1, key="conta_id_maximo")
+
+        st.markdown("<h4 style='text-align: center;'>Metas financeiras (nível conta)</h4>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Os dados valem para toda a conta para execução deste robô</p>",
+            unsafe_allow_html=True,
+        )
+
+        m1, m2 = st.columns(2)
+        with m1:
+            st.number_input("Meta de ganho", min_value=0, step=1, key="conta_meta_ganho")
+        with m2:
+            st.selectbox(
+                "Encerrar no trade (Meta de ganho)",
+                ["Sim", "Não"],
+                key="conta_encerrar_meta_ganho",
+            )
+
+        p1, p2 = st.columns(2)
+        with p1:
+            st.number_input("Limite de perda", min_value=0, step=1, key="conta_limite_perda")
+        with p2:
+            st.selectbox(
+                "Encerrar no trade (Limite de perda)",
+                ["Sim", "Não"],
+                key="conta_encerrar_limite_perda",
+            )
+
+        rb1, rb2 = st.columns(2)
+        with rb1:
+            st.number_input("Rebaixamento", min_value=0, step=1, key="conta_rebaixamento")
+        with rb2:
+            st.selectbox(
+                "Encerrar no trade (Rebaixamento)",
+                ["Não", "Sim"],
+                key="conta_encerrar_rebaixamento",
+            )
+
+        rb3, rb4 = st.columns(2)
+        with rb3:
+            st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="conta_gatilho_rebaixamento")
+        with rb4:
+            st.number_input("Recuperação", min_value=0, step=1, key="conta_recuperacao")
+
+        rc1, rc2 = st.columns(2)
+        with rc1:
+            st.selectbox(
+                "Encerrar no trade (Recuperação)",
+                ["Não", "Sim"],
+                key="conta_encerrar_recuperacao",
+            )
+        with rc2:
+            st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="conta_gatilho_recuperacao")
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 23
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.permissoes_gestao_conta_salvo = True
+                st.session_state.etapa = 25
+                st.rerun()
+
+        if st.session_state.permissoes_gestao_conta_salvo:
+            st.success("Permissões / gestão da conta salvas.")
+
+if st.session_state.etapa == 25:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>AJUSTES FINAIS</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Selecione algumas confirmações para os ajustes finais</p>",
+            unsafe_allow_html=True,
+        )
+
+        opcoes_sim_nao = ["Sim", "Não"]
+
+        st.selectbox(
+            "Cancelar pendente de entrada se aparecer sinal oposto",
+            opcoes_sim_nao,
+            key="ajuste_cancelar_pendente_entrada_sinal_oposto",
+        )
+        st.selectbox(
+            "Reposicionar stoploss no aumento a favor da operação",
+            opcoes_sim_nao,
+            key="ajuste_reposicionar_stoploss_aumento_favor",
+        )
+        st.selectbox(
+            "Reposicionar takeprofit no aumento contra a operação",
+            opcoes_sim_nao,
+            key="ajuste_reposicionar_takeprofit_aumento_contra",
+        )
+        st.selectbox(
+            "Movimentar stoploss com base no preço médio",
+            opcoes_sim_nao,
+            key="ajuste_movimentar_stoploss_preco_medio",
+        )
+        st.selectbox(
+            "Movimentar takeprofit com base no preço médio",
+            opcoes_sim_nao,
+            key="ajuste_movimentar_takeprofit_preco_medio",
+        )
+        st.selectbox(
+            "Usar preço médio como referência das parciais",
+            opcoes_sim_nao,
+            key="ajuste_usar_preco_medio_parciais",
+        )
+        st.selectbox(
+            "Impedir sinal de saída na vela que gerou entrada",
+            opcoes_sim_nao,
+            key="ajuste_impedir_saida_vela_entrada",
+        )
+        st.selectbox(
+            "Impedir sinal de entrada na vela que gerou saída",
+            opcoes_sim_nao,
+            key="ajuste_impedir_entrada_vela_saida",
+        )
+        st.selectbox(
+            "Recalcular o preço médio com base nas saídas parciais",
+            ["Não", "Sim"],
+            key="ajuste_recalcular_preco_medio_saidas_parciais",
+        )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 24
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.ajustes_finais_salvo = True
+                st.session_state.etapa = 26
+                st.rerun()
+
+        if st.session_state.ajustes_finais_salvo:
+            st.success("Ajustes finais salvos.")
+
+if st.session_state.etapa == 26:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>COMPLEMENTOS</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Adicione alguns complementos de ordens e sinais</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.markdown("<h4 style='text-align: center;'>Complementos de ordens e sinais</h4>", unsafe_allow_html=True)
+
+        opcoes_nao_sim = ["Não", "Sim"]
+
+        st.selectbox(
+            "Enviar ordem para outro ativo (Cross order)",
+            opcoes_nao_sim,
+            key="comp_enviar_ordem_outro_ativo",
+        )
+        st.selectbox(
+            "Procurar entrada na vela seguinte à saída",
+            opcoes_nao_sim,
+            key="comp_procurar_entrada_vela_seguinte_saida",
+        )
+        st.selectbox(
+            "Procurar saída na vela seguinte à entrada",
+            opcoes_nao_sim,
+            key="comp_procurar_saida_vela_seguinte_entrada",
+        )
+
+        st.number_input(
+            "Saldo de ajuste para somar com a conta",
+            min_value=0,
+            step=1,
+            key="comp_saldo_ajuste",
+        )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 25
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.complementos_salvo = True
+                st.session_state.etapa = 27
+                st.rerun()
+
+if st.session_state.etapa == 27:
+    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+
+    with col_centro:
+        st.markdown("<h3 style='text-align: center;'>FINALIZAÇÃO</h3>", unsafe_allow_html=True)
+
+        st.markdown(
+            "<p style='text-align: center;'>Selecione alguns adicionais e finalize o processo de criação do seu robô</p>",
+            unsafe_allow_html=True,
+        )
+
+        st.checkbox(
+            "Exibir indicadores ao carregar o expert advisor em um gráfico",
+            key="final_exibir_indicadores",
+        )
+        st.checkbox("Criar painel e boleta no gráfico", key="final_criar_painel_boleta")
+        st.checkbox("Criar log do expert no gráfico", key="final_criar_log_expert")
+        st.checkbox(
+            "Criar etiquetas personalizadas nas ordens",
+            key="final_criar_etiquetas_personalizadas",
+        )
+        st.checkbox(
+            "Alterar layout do gráfico (Cores de fundo e candles)",
+            key="final_alterar_layout_grafico",
+        )
+
+        nav_esq, nav_dir = st.columns(2)
+        with nav_esq:
+            if st.button("Voltar", use_container_width=True):
+                st.session_state.etapa = 26
+                st.rerun()
+        with nav_dir:
+            if st.button("Salvar", use_container_width=True):
+                st.session_state.finalizacao_salvo = True
+
+        if st.session_state.finalizacao_salvo:
+            st.success("Finalização salva.")
