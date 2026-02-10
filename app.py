@@ -454,8 +454,20 @@ if "sobrecompra_venda_entrada" not in st.session_state:
 if "sobrecompra_nivel" not in st.session_state:
     st.session_state.sobrecompra_nivel = 2
 
+if "sobrecompra_nivel_passe" not in st.session_state:
+    st.session_state.sobrecompra_nivel_passe = 2
+
+if "final_sobrecompra_nivel" not in st.session_state:
+    st.session_state.final_sobrecompra_nivel = 2
+
 if "sobrevenda_nivel" not in st.session_state:
     st.session_state.sobrevenda_nivel = 2
+
+if "sobrevenda_nivel_passe" not in st.session_state:
+    st.session_state.sobrevenda_nivel_passe = 2
+
+if "final_sobrevenda_nivel" not in st.session_state:
+    st.session_state.final_sobrevenda_nivel = 2
 
 if "sobrecompra_venda_sentido" not in st.session_state:
     st.session_state.sobrecompra_venda_sentido = "Tendencia"
@@ -465,9 +477,6 @@ if "sobrecompra_venda_saida" not in st.session_state:
 
 if "sinais_prontos_salvo" not in st.session_state:
     st.session_state.sinais_prontos_salvo = False
-
-if "resumo_validacao_final_salvo" not in st.session_state:
-    st.session_state.resumo_validacao_final_salvo = False
 
 if "indicador_escolha_1" not in st.session_state:
     st.session_state.indicador_escolha_1 = "Não usar"
@@ -498,9 +507,6 @@ for _k in ("indicador_escolha_1", "indicador_escolha_2", "indicador_escolha_3", 
 
 if "escolher_indicadores_salvo" not in st.session_state:
     st.session_state.escolher_indicadores_salvo = False
-
-if "configurar_indicadores_salvo" not in st.session_state:
-    st.session_state.configurar_indicadores_salvo = False
 
 if "sec_modo_edicao" not in st.session_state:
     st.session_state.sec_modo_edicao = "Avançado"
@@ -2560,170 +2566,243 @@ if st.session_state.etapa == 17:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>SINAIS PRONTOS</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>17. SINAIS PRONTOS</h3>", unsafe_allow_html=True)
 
         st.markdown(
             "<p style='text-align: center;'>Podera selecionar quais estrategias desejar ou combina-las para usar para sinais de entrada e/ou saida</p>",
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>CANAL DE BANDAS</h4>", unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("<h4 style='text-align: center;'>📊 CANAL DE BANDAS</h4>", unsafe_allow_html=True)
 
-        st.selectbox(
-            "Indicador",
-            ["Nao usar", "Bandas de Bollinger", "Envelopes", "Keltner", "Dochian", "Canal ATR"],
-            key="canal_bandas_indicador",
-        )
+            cb_c1, cb_c2 = st.columns(2, gap="large")
+            with cb_c1:
+                st.selectbox(
+                    "📊 Indicador",
+                    [
+                        "Nao usar",
+                        "Bandas de Bollinger",
+                        "Envelopes",
+                        "Keltner",
+                        "Dochian",
+                        "Canal ATR",
+                    ],
+                    key="canal_bandas_indicador",
+                )
+            with cb_c2:
+                st.selectbox(
+                    "🟢 Entrada",
+                    [
+                        "Nao usar",
+                        "Fechou fora",
+                        "Fechou dentro e saiu",
+                        "Fechou dentro e fechou fora",
+                        "Fechou fora e voltou",
+                        "Fechou fora e fechou dentro",
+                        "Estando fora",
+                    ],
+                    key="canal_bandas_entrada",
+                )
 
-        st.selectbox(
-            "Entrada",
-            [
-                "Nao usar",
-                "Fechou fora",
-                "Fechou dentro e saiu",
-                "Fechou dentro e fechou fora",
-                "Fechou fora e voltou",
-                "Fechou fora e fechou dentro",
-                "Estando fora",
-            ],
-            key="canal_bandas_entrada",
-        )
+            cb_c3, cb_c4 = st.columns(2, gap="large")
+            with cb_c3:
+                st.selectbox(
+                    "🧭 Sentido",
+                    ["Tendencia", "Contra Tendencia"],
+                    key="canal_bandas_sentido",
+                )
+            with cb_c4:
+                st.selectbox(
+                    "🔴 Saida",
+                    [
+                        "Nao usar",
+                        "Cruzar o centro",
+                        "Cruzar o centro e fechar",
+                        "Cruzar banda oposta",
+                        "Cruzar oposta e fechar",
+                    ],
+                    key="canal_bandas_saida",
+                )
 
-        st.selectbox(
-            "Sentido",
-            ["Tendencia", "Contra Tendencia"],
-            key="canal_bandas_sentido",
-        )
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>🔀 CRUZAMENTO DE SINAIS</h4>", unsafe_allow_html=True)
 
-        st.selectbox(
-            "Saida",
-            [
-                "Nao usar",
-                "Cruzar o centro",
-                "Cruzar o centro e fechar",
-                "Cruzar banda oposta",
-                "Cruzar oposta e fechar",
-            ],
-            key="canal_bandas_saida",
-        )
+            cr_c1, cr_c2 = st.columns(2, gap="large")
+            with cr_c1:
+                st.selectbox(
+                    "⚡ Sinal rapido",
+                    [
+                        "Nao usar",
+                        "Fechamento da vela",
+                        "Abertura da vela",
+                        "Maxima da vela",
+                        "Minima da vela",
+                        "Media movel",
+                        "Vidya",
+                        "Dema",
+                        "Tema",
+                        "Frama",
+                    ],
+                    key="cruzamento_sinal_rapido",
+                )
+            with cr_c2:
+                st.selectbox(
+                    "🐢 Sinal lento",
+                    [
+                        "Nao usar",
+                        "Fechamento da vela",
+                        "Abertura da vela",
+                        "Maxima da vela",
+                        "Minima da vela",
+                        "Media movel",
+                        "Vidya",
+                        "Dema",
+                        "Tema",
+                        "Frama",
+                    ],
+                    key="cruzamento_sinal_lento",
+                )
 
-        st.markdown("<hr />", unsafe_allow_html=True)
-        st.markdown("<h4 style='text-align: center;'>CRUZAMENTO DE SINAIS</h4>", unsafe_allow_html=True)
+            cr_c3, cr_c4 = st.columns(2, gap="large")
+            with cr_c3:
+                st.selectbox(
+                    "🟢 Entrada",
+                    ["Nao usar", "Cruzamento", "Cruzamento e fechando"],
+                    key="cruzamento_entrada",
+                )
+            with cr_c4:
+                st.selectbox(
+                    "🧭 Sentido",
+                    ["Tendencia", "Contra Tendencia"],
+                    key="cruzamento_sentido",
+                )
 
-        st.selectbox(
-            "Sinal rapido",
-            [
-                "Nao usar",
-                "Fechamento da vela",
-                "Abertura da vela",
-                "Maxima da vela",
-                "Minima da vela",
-                "Media movel",
-                "Vidya",
-                "Dema",
-                "Tema",
-                "Frama",
-            ],
-            key="cruzamento_sinal_rapido",
-        )
+            cr_c5, cr_c6 = st.columns(2, gap="large")
+            with cr_c5:
+                st.selectbox(
+                    "🔴 Saida",
+                    ["Nao usar", "Cruzamento oposto", "Cruzar oposto e fechar"],
+                    key="cruzamento_saida",
+                )
+            with cr_c6:
+                st.empty()
 
-        st.selectbox(
-            "Sinal lento",
-            [
-                "Nao usar",
-                "Fechamento da vela",
-                "Abertura da vela",
-                "Maxima da vela",
-                "Minima da vela",
-                "Media movel",
-                "Vidya",
-                "Dema",
-                "Tema",
-                "Frama",
-            ],
-            key="cruzamento_sinal_lento",
-        )
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>📈 SOBRE COMPRADO / VENDIDO</h4>", unsafe_allow_html=True)
 
-        st.selectbox(
-            "Entrada",
-            ["Nao usar", "Cruzamento", "Cruzamento e fechando"],
-            key="cruzamento_entrada",
-        )
+            sc_c1, sc_c2 = st.columns(2, gap="large")
+            with sc_c1:
+                st.selectbox(
+                    "📊 Indicador",
+                    [
+                        "Nao usar",
+                        "MACD",
+                        "Estocastico",
+                        "RSI",
+                        "Money Flow Index (MFI)",
+                        "Bears Power",
+                        "Bulls Power",
+                        "Chaikin Oscilador",
+                        "Accelerator Oscilador",
+                        "Awesome Oscilador",
+                        "Commodity Channel Index (CCI)",
+                        "DeMarker",
+                        "Regressao",
+                        "Afastamento da media",
+                        "Desvio medio",
+                    ],
+                    key="sobrecompra_venda_indicador",
+                )
+            with sc_c2:
+                st.selectbox(
+                    "🟢 Entrada",
+                    [
+                        "Nao usar",
+                        "Fechou fora",
+                        "Fechou dentro e saiu",
+                        "Fechou dentro e fechou fora",
+                        "Fechou fora e voltou",
+                        "Fechou fora e fechou dentro",
+                        "Estando fora",
+                    ],
+                    key="sobrecompra_venda_entrada",
+                )
 
-        st.selectbox(
-            "Sentido",
-            ["Tendencia", "Contra Tendencia"],
-            key="cruzamento_sentido",
-        )
+            c_ini, c_passe, c_fim = st.columns(3, gap="large")
+            with c_ini:
+                st.markdown(
+                    "<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Inicial</p>",
+                    unsafe_allow_html=True,
+                )
+                st.number_input(
+                    "📈 Sobrecompra",
+                    min_value=0,
+                    step=1,
+                    key="sobrecompra_nivel",
+                )
+                st.number_input(
+                    "📉 Sobrevenda",
+                    min_value=0,
+                    step=1,
+                    key="sobrevenda_nivel",
+                )
 
-        st.selectbox(
-            "Saida",
-            ["Nao usar", "Cruzamento oposto", "Cruzar oposto e fechar"],
-            key="cruzamento_saida",
-        )
+            with c_passe:
+                st.markdown(
+                    "<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>",
+                    unsafe_allow_html=True,
+                )
+                st.number_input(
+                    "📈 Sobrecompra",
+                    min_value=0,
+                    step=1,
+                    key="sobrecompra_nivel_passe",
+                )
+                st.number_input(
+                    "📉 Sobrevenda",
+                    min_value=0,
+                    step=1,
+                    key="sobrevenda_nivel_passe",
+                )
 
-        st.markdown("<hr />", unsafe_allow_html=True)
-        st.markdown("<h4 style='text-align: center;'>SOBRE COMPRADO / VENDIDO</h4>", unsafe_allow_html=True)
+            with c_fim:
+                st.markdown(
+                    "<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Final</p>",
+                    unsafe_allow_html=True,
+                )
+                st.number_input(
+                    "📈 Sobrecompra",
+                    min_value=0,
+                    step=1,
+                    key="final_sobrecompra_nivel",
+                )
+                st.number_input(
+                    "📉 Sobrevenda",
+                    min_value=0,
+                    step=1,
+                    key="final_sobrevenda_nivel",
+                )
 
-        st.selectbox(
-            "Indicador",
-            [
-                "Nao usar",
-                "MACD",
-                "Estocastico",
-                "RSI",
-                "Money Flow Index (MFI)",
-                "Bears Power",
-                "Bulls Power",
-                "Chaikin Oscilador",
-                "Accelerator Oscilador",
-                "Awesome Oscilador",
-                "Commodity Channel Index (CCI)",
-                "DeMarker",
-                "Regressao",
-                "Afastamento da media",
-                "Desvio medio",
-            ],
-            key="sobrecompra_venda_indicador",
-        )
-
-        st.selectbox(
-            "Entrada",
-            [
-                "Nao usar",
-                "Fechou fora",
-                "Fechou dentro e saiu",
-                "Fechou dentro e fechou fora",
-                "Fechou fora e voltou",
-                "Fechou fora e fechou dentro",
-                "Estando fora",
-            ],
-            key="sobrecompra_venda_entrada",
-        )
-
-        n1, n2 = st.columns(2)
-        with n1:
-            st.number_input("Sobrecompra", step=1, key="sobrecompra_nivel")
-        with n2:
-            st.number_input("Sobrevenda", step=1, key="sobrevenda_nivel")
-
-        st.selectbox(
-            "Sentido",
-            ["Tendencia", "Contra Tendencia"],
-            key="sobrecompra_venda_sentido",
-        )
-
-        st.selectbox(
-            "Saida",
-            [
-                "Nao usar",
-                "Cruzar o centro",
-                "Cruzar o centro e fechar",
-                "Cruzar banda oposta",
-                "Cruzar oposta e fechar",
-            ],
-            key="sobrecompra_venda_saida",
-        )
+            sc_c3, sc_c4 = st.columns(2, gap="large")
+            with sc_c3:
+                st.selectbox(
+                    "🧭 Sentido",
+                    ["Tendencia", "Contra Tendencia"],
+                    key="sobrecompra_venda_sentido",
+                )
+            with sc_c4:
+                st.selectbox(
+                    "🔴 Saida",
+                    [
+                        "Nao usar",
+                        "Cruzar o centro",
+                        "Cruzar o centro e fechar",
+                        "Cruzar banda oposta",
+                        "Cruzar oposta e fechar",
+                    ],
+                    key="sobrecompra_venda_saida",
+                )
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -2733,49 +2812,6 @@ if st.session_state.etapa == 17:
         with nav_dir:
             if st.button("Salvar", use_container_width=True):
                 st.session_state.sinais_prontos_salvo = True
-                st.session_state.etapa = 18
-                st.rerun()
-
-if st.session_state.etapa == 18:
-    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
-
-    with col_centro:
-        st.markdown(
-            "<p style='text-align: center;'>Voce ainda podera alterar todos os parametros diretamente em seu robo quando estiver pronto</p>",
-            unsafe_allow_html=True,
-        )
-
-        def bloco_info(texto_principal: str, texto_auxiliar: str) -> None:
-            st.markdown(
-                f"""
-                <div style="border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 10px; padding: 14px;">
-                    <div style="font-size: 18px; font-weight: 600;">{texto_principal}</div>
-                    <div style="font-size: 12px; opacity: 0.75; margin-top: 4px;">{texto_auxiliar}</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        r1_c1, r1_c2 = st.columns(2)
-        with r1_c1:
-            bloco_info("Nao selecionado", "Dados nao requeridos")
-        with r1_c2:
-            bloco_info("Nao selecionado/Nao selecionado", "Dados nao requeridos")
-
-        r2_c1, r2_c2 = st.columns(2)
-        with r2_c1:
-            bloco_info("Nao selecionado", "Dados nao requeridos")
-        with r2_c2:
-            bloco_info("Nao selecionado", "Dados nao requeridos")
-
-        nav_esq, nav_dir = st.columns(2)
-        with nav_esq:
-            if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 17
-                st.rerun()
-        with nav_dir:
-            if st.button("Salvar", use_container_width=True):
-                st.session_state.resumo_validacao_final_salvo = True
                 st.session_state.etapa = 19
                 st.rerun()
 
@@ -2783,7 +2819,7 @@ if st.session_state.etapa == 19:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>ESCOLHER INDICADORES</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>19. ESCOLHER INDICADORES</h3>", unsafe_allow_html=True)
 
         st.markdown(
             "<p style='text-align: center;'>Você poderá selecionar até 4 indicadores para utilizar como sinais e/ou filtros de entrada e/ou saída</p>",
@@ -2836,74 +2872,32 @@ if st.session_state.etapa == 19:
             "Relative Vigor Index (RVI)",
         ]
 
-        st.selectbox("Escolha o indicador [1]", opcoes_indicadores, key="indicador_escolha_1")
-        st.selectbox("Escolha o indicador [2]", opcoes_indicadores, key="indicador_escolha_2")
-        st.selectbox("Escolha o indicador [3]", opcoes_indicadores, key="indicador_escolha_3")
-        st.selectbox("Escolha o indicador [4]", opcoes_indicadores, key="indicador_escolha_4")
+        with st.container(border=True):
+            c1, c2 = st.columns(2, gap="large")
+            with c1:
+                st.selectbox("🧩 Indicador [1]", opcoes_indicadores, key="indicador_escolha_1")
+            with c2:
+                st.selectbox("🧩 Indicador [2]", opcoes_indicadores, key="indicador_escolha_2")
+
+            c3, c4 = st.columns(2, gap="large")
+            with c3:
+                st.selectbox("🧩 Indicador [3]", opcoes_indicadores, key="indicador_escolha_3")
+            with c4:
+                st.selectbox("🧩 Indicador [4]", opcoes_indicadores, key="indicador_escolha_4")
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
             if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 18
+                st.session_state.etapa = 17
                 st.rerun()
         with nav_dir:
             if st.button("Salvar", use_container_width=True):
                 st.session_state.escolher_indicadores_salvo = True
-                st.session_state.etapa = 20
+                st.session_state.etapa = 21
                 st.rerun()
 
         if st.session_state.escolher_indicadores_salvo:
             st.success("Indicadores salvos.")
-
-if st.session_state.etapa == 20:
-    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
-
-    with col_centro:
-        st.markdown("<h3 style='text-align: center;'>CONFIGURAR INDICADORES</h3>", unsafe_allow_html=True)
-
-        st.markdown(
-            "<p style='text-align: center;'>Você ainda poderá alterar todos os parâmetros diretamente em seu robô quando estiver pronto</p>",
-            unsafe_allow_html=True,
-        )
-
-        def bloco_status_indicador(numero: int, valor: str) -> None:
-            texto = f"[{numero}] Não selecionado" if valor == "Não usar" else f"[{numero}] {valor}"
-            st.markdown(
-                f"""
-                <div style="border: 1px solid rgba(49, 51, 63, 0.2); border-radius: 10px; padding: 14px;">
-                    <div style="font-size: 18px; font-weight: 600;">{texto}</div>
-                    <div style="font-size: 12px; opacity: 0.75; margin-top: 4px;">Dados não requeridos</div>
-                </div>
-                """,
-                unsafe_allow_html=True,
-            )
-
-        r1_c1, r1_c2 = st.columns(2)
-        with r1_c1:
-            bloco_status_indicador(1, st.session_state.indicador_escolha_1)
-        with r1_c2:
-            bloco_status_indicador(2, st.session_state.indicador_escolha_2)
-
-        r2_c1, r2_c2 = st.columns(2)
-        with r2_c1:
-            bloco_status_indicador(3, st.session_state.indicador_escolha_3)
-        with r2_c2:
-            bloco_status_indicador(4, st.session_state.indicador_escolha_4)
-
-        nav_esq, nav_dir = st.columns(2)
-        with nav_esq:
-            if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 19
-                st.rerun()
-        with nav_dir:
-            if st.button("Salvar", use_container_width=True):
-                st.session_state.configurar_indicadores_salvo = True
-                st.session_state.etapa = 21
-                st.rerun()
-
-        if st.session_state.configurar_indicadores_salvo:
-            st.success("Configuração de indicadores salva.")
-
 if st.session_state.etapa == 21:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
@@ -3037,7 +3031,7 @@ if st.session_state.etapa == 21:
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
             if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 20
+                st.session_state.etapa = 19
                 st.rerun()
         with nav_dir:
             if st.button("Salvar", use_container_width=True):
