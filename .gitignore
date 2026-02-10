@@ -1,2 +1,15 @@
 comandos.txt
+# Ambiente virtual
+venv/
+.venv/
 
+# Python
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# SO
+.DS_Store
+Thumbs.db
