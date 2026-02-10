@@ -1031,11 +1031,26 @@ if "aumento_favor_salvo" not in st.session_state:
 if "tipo_calculo_saidas_parciais" not in st.session_state:
     st.session_state.tipo_calculo_saidas_parciais = "Em pontos"
 
+if "final_tipo_calculo_saidas_parciais" not in st.session_state:
+    st.session_state.final_tipo_calculo_saidas_parciais = "Nao usar"
+
 if "distancia_parcial_1" not in st.session_state:
     st.session_state.distancia_parcial_1 = 0
 
 if "volume_parcial_1" not in st.session_state:
     st.session_state.volume_parcial_1 = 0
+
+if "distancia_parcial_1_passe" not in st.session_state:
+    st.session_state.distancia_parcial_1_passe = 0
+
+if "volume_parcial_1_passe" not in st.session_state:
+    st.session_state.volume_parcial_1_passe = 0
+
+if "final_distancia_parcial_1" not in st.session_state:
+    st.session_state.final_distancia_parcial_1 = 0
+
+if "final_volume_parcial_1" not in st.session_state:
+    st.session_state.final_volume_parcial_1 = 0
 
 if "distancia_parcial_2" not in st.session_state:
     st.session_state.distancia_parcial_2 = 0
@@ -1043,17 +1058,53 @@ if "distancia_parcial_2" not in st.session_state:
 if "volume_parcial_2" not in st.session_state:
     st.session_state.volume_parcial_2 = 0
 
+if "distancia_parcial_2_passe" not in st.session_state:
+    st.session_state.distancia_parcial_2_passe = 0
+
+if "volume_parcial_2_passe" not in st.session_state:
+    st.session_state.volume_parcial_2_passe = 0
+
+if "final_distancia_parcial_2" not in st.session_state:
+    st.session_state.final_distancia_parcial_2 = 0
+
+if "final_volume_parcial_2" not in st.session_state:
+    st.session_state.final_volume_parcial_2 = 0
+
 if "distancia_parcial_3" not in st.session_state:
     st.session_state.distancia_parcial_3 = 0
 
 if "volume_parcial_3" not in st.session_state:
     st.session_state.volume_parcial_3 = 0
 
+if "distancia_parcial_3_passe" not in st.session_state:
+    st.session_state.distancia_parcial_3_passe = 0
+
+if "volume_parcial_3_passe" not in st.session_state:
+    st.session_state.volume_parcial_3_passe = 0
+
+if "final_distancia_parcial_3" not in st.session_state:
+    st.session_state.final_distancia_parcial_3 = 0
+
+if "final_volume_parcial_3" not in st.session_state:
+    st.session_state.final_volume_parcial_3 = 0
+
 if "distancia_parcial_4" not in st.session_state:
     st.session_state.distancia_parcial_4 = 0
 
 if "volume_parcial_4" not in st.session_state:
     st.session_state.volume_parcial_4 = 0
+
+if "distancia_parcial_4_passe" not in st.session_state:
+    st.session_state.distancia_parcial_4_passe = 0
+
+if "volume_parcial_4_passe" not in st.session_state:
+    st.session_state.volume_parcial_4_passe = 0
+
+if "final_distancia_parcial_4" not in st.session_state:
+    st.session_state.final_distancia_parcial_4 = 0
+
+if "final_volume_parcial_4" not in st.session_state:
+    st.session_state.final_volume_parcial_4 = 0
 
 if "saidas_parciais_salvas" not in st.session_state:
     st.session_state.saidas_parciais_salvas = False
@@ -2208,49 +2259,64 @@ if st.session_state.etapa == 14:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>SAIDAS PARCIAIS</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>14. SAIDAS PARCIAIS</h3>", unsafe_allow_html=True)
 
         st.markdown(
-            "<p style='text-align: center;'>Determine a referencia para a distancia das parciais</p>",
+            "<p class='center-note'>Determine a referencia para a distancia das parciais</p>",
             unsafe_allow_html=True,
         )
 
-        st.selectbox(
-            "Tipo de calculo da distancia",
-            ["Em pontos", "Percentual"],
-            key="tipo_calculo_saidas_parciais",
-        )
-
         st.markdown(
-            "<p style='text-align: center;'>Distancias positivas serao ordens limites no ganho e negativas, ordens gatilhos no loss</p>",
+            "<p class='center-note'>Distancias positivas serao ordens limites no ganho e negativas, ordens gatilhos no loss</p>",
             unsafe_allow_html=True,
         )
 
-        st.markdown("<p style='text-align: center;'><strong>Saidas parciais</strong></p>", unsafe_allow_html=True)
+        with st.container(border=True):
+            col_tc_ini, col_tc_fim = st.columns(2, gap="large")
+            with col_tc_ini:
+                st.selectbox(
+                    "📏 Tipo de calculo da distancia (Iniciar)",
+                    ["Em pontos", "Percentual"],
+                    key="tipo_calculo_saidas_parciais",
+                )
+            with col_tc_fim:
+                st.selectbox(
+                    "📏 Tipo de calculo da distancia (Finalizar)",
+                    ["Nao usar", "Em pontos", "Percentual"],
+                    key="final_tipo_calculo_saidas_parciais",
+                )
 
-        p1_col1, p1_col2 = st.columns(2)
-        with p1_col1:
-            st.number_input("Distancia parcial 1", step=1, key="distancia_parcial_1")
-        with p1_col2:
-            st.number_input("Volume 1", min_value=0, step=1, key="volume_parcial_1")
+            st.divider()
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
+            st.markdown("<p style='text-align: center; font-weight: 900; margin: 0 0 0.75rem 0;'>Saidas parciais</p>", unsafe_allow_html=True)
 
-        p2_col1, p2_col2 = st.columns(2)
-        with p2_col1:
-            st.number_input("Distancia parcial 2", step=1, key="distancia_parcial_2")
-        with p2_col2:
-            st.number_input("Volume 2", min_value=0, step=1, key="volume_parcial_2")
+            c_ini, c_passe, c_fim = st.columns(3, gap="large")
+            with c_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Inicial</p>", unsafe_allow_html=True)
+                for i in range(1, 5):
+                    d, v = st.columns(2)
+                    with d:
+                        st.number_input(f"Distancia parcial {i}", step=1, key=f"distancia_parcial_{i}")
+                    with v:
+                        st.number_input(f"Volume {i}", min_value=0, step=1, key=f"volume_parcial_{i}")
 
-        p3_col1, p3_col2 = st.columns(2)
-        with p3_col1:
-            st.number_input("Distancia parcial 3", step=1, key="distancia_parcial_3")
-        with p3_col2:
-            st.number_input("Volume 3", min_value=0, step=1, key="volume_parcial_3")
+            with c_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                for i in range(1, 5):
+                    d, v = st.columns(2)
+                    with d:
+                        st.number_input(f"Distancia parcial {i}", step=1, key=f"distancia_parcial_{i}_passe")
+                    with v:
+                        st.number_input(f"Volume {i}", min_value=0, step=1, key=f"volume_parcial_{i}_passe")
 
-        p4_col1, p4_col2 = st.columns(2)
-        with p4_col1:
-            st.number_input("Distancia parcial 4", step=1, key="distancia_parcial_4")
-        with p4_col2:
-            st.number_input("Volume 4", min_value=0, step=1, key="volume_parcial_4")
+            with c_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Final</p>", unsafe_allow_html=True)
+                for i in range(1, 5):
+                    d, v = st.columns(2)
+                    with d:
+                        st.number_input(f"Distancia parcial {i}", step=1, key=f"final_distancia_parcial_{i}")
+                    with v:
+                        st.number_input(f"Volume {i}", min_value=0, step=1, key=f"final_volume_parcial_{i}")
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
