@@ -313,23 +313,62 @@ if "saida_temporal_salva" not in st.session_state:
 if "tipo_calculo_gradiente_linear" not in st.session_state:
     st.session_state.tipo_calculo_gradiente_linear = "Em pontos"
 
+if "final_tipo_calculo_gradiente_linear" not in st.session_state:
+    st.session_state.final_tipo_calculo_gradiente_linear = "Nao usar"
+
 if "quantidade_niveis_gradiente_linear" not in st.session_state:
     st.session_state.quantidade_niveis_gradiente_linear = 0
+
+if "quantidade_niveis_gradiente_linear_passe" not in st.session_state:
+    st.session_state.quantidade_niveis_gradiente_linear_passe = 0
+
+if "final_quantidade_niveis_gradiente_linear" not in st.session_state:
+    st.session_state.final_quantidade_niveis_gradiente_linear = 0
 
 if "distancia_niveis_gradiente_linear" not in st.session_state:
     st.session_state.distancia_niveis_gradiente_linear = 0
 
+if "distancia_niveis_gradiente_linear_passe" not in st.session_state:
+    st.session_state.distancia_niveis_gradiente_linear_passe = 0
+
+if "final_distancia_niveis_gradiente_linear" not in st.session_state:
+    st.session_state.final_distancia_niveis_gradiente_linear = 0
+
 if "volume_ordens_gradiente_linear" not in st.session_state:
     st.session_state.volume_ordens_gradiente_linear = 0
+
+if "volume_ordens_gradiente_linear_passe" not in st.session_state:
+    st.session_state.volume_ordens_gradiente_linear_passe = 0
+
+if "final_volume_ordens_gradiente_linear" not in st.session_state:
+    st.session_state.final_volume_ordens_gradiente_linear = 0
 
 if "alvo_parcial_gradiente_linear" not in st.session_state:
     st.session_state.alvo_parcial_gradiente_linear = 0
 
+if "alvo_parcial_gradiente_linear_passe" not in st.session_state:
+    st.session_state.alvo_parcial_gradiente_linear_passe = 0
+
+if "final_alvo_parcial_gradiente_linear" not in st.session_state:
+    st.session_state.final_alvo_parcial_gradiente_linear = 0
+
 if "limite_entradas_gradiente_linear" not in st.session_state:
     st.session_state.limite_entradas_gradiente_linear = 0
 
+if "limite_entradas_gradiente_linear_passe" not in st.session_state:
+    st.session_state.limite_entradas_gradiente_linear_passe = 0
+
+if "final_limite_entradas_gradiente_linear" not in st.session_state:
+    st.session_state.final_limite_entradas_gradiente_linear = 0
+
 if "reposicionar_ordem_gradiente_linear" not in st.session_state:
     st.session_state.reposicionar_ordem_gradiente_linear = 0
+
+if "reposicionar_ordem_gradiente_linear_passe" not in st.session_state:
+    st.session_state.reposicionar_ordem_gradiente_linear_passe = 0
+
+if "final_reposicionar_ordem_gradiente_linear" not in st.session_state:
+    st.session_state.final_reposicionar_ordem_gradiente_linear = 0
 
 if "gradiente_linear_salvo" not in st.session_state:
     st.session_state.gradiente_linear_salvo = False
@@ -337,17 +376,44 @@ if "gradiente_linear_salvo" not in st.session_state:
 if "tempo_grafico_vela_filtro" not in st.session_state:
     st.session_state.tempo_grafico_vela_filtro = "Corrente"
 
+if "final_tempo_grafico_vela_filtro" not in st.session_state:
+    st.session_state.final_tempo_grafico_vela_filtro = "Nao usar"
+
 if "tamanho_minimo_vela_filtro" not in st.session_state:
     st.session_state.tamanho_minimo_vela_filtro = 0
+
+if "tamanho_minimo_vela_filtro_passe" not in st.session_state:
+    st.session_state.tamanho_minimo_vela_filtro_passe = 0
+
+if "final_tamanho_minimo_vela_filtro" not in st.session_state:
+    st.session_state.final_tamanho_minimo_vela_filtro = 0
 
 if "tamanho_maximo_vela_filtro" not in st.session_state:
     st.session_state.tamanho_maximo_vela_filtro = 0
 
+if "tamanho_maximo_vela_filtro_passe" not in st.session_state:
+    st.session_state.tamanho_maximo_vela_filtro_passe = 0
+
+if "final_tamanho_maximo_vela_filtro" not in st.session_state:
+    st.session_state.final_tamanho_maximo_vela_filtro = 0
+
 if "minimo_corpo_vela_filtro" not in st.session_state:
     st.session_state.minimo_corpo_vela_filtro = 0
 
+if "minimo_corpo_vela_filtro_passe" not in st.session_state:
+    st.session_state.minimo_corpo_vela_filtro_passe = 0
+
+if "final_minimo_corpo_vela_filtro" not in st.session_state:
+    st.session_state.final_minimo_corpo_vela_filtro = 0
+
 if "maximo_corpo_vela_filtro" not in st.session_state:
     st.session_state.maximo_corpo_vela_filtro = 0
+
+if "maximo_corpo_vela_filtro_passe" not in st.session_state:
+    st.session_state.maximo_corpo_vela_filtro_passe = 0
+
+if "final_maximo_corpo_vela_filtro" not in st.session_state:
+    st.session_state.final_maximo_corpo_vela_filtro = 0
 
 if "vela_filtro_salvo" not in st.session_state:
     st.session_state.vela_filtro_salvo = False
@@ -2333,71 +2399,64 @@ if st.session_state.etapa == 15:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>GRADIENTE LINEAR</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>15. GRADIENTE LINEAR</h3>", unsafe_allow_html=True)
 
         st.markdown(
-            "<p style='text-align: center;'>Escolha a referencia para distancias dos alvos e ordens do gradiente</p>",
+            "<p class='center-note'>Escolha a referencia para distancias dos alvos e ordens do gradiente</p>",
             unsafe_allow_html=True,
         )
 
-        st.selectbox(
-            "Tipo de calculo da distancia",
-            ["Em pontos", "Percentual"],
-            key="tipo_calculo_gradiente_linear",
-        )
-
         st.markdown(
-            "<p style='text-align: center;'>O gradiente sera recorrente ou limitado a quantidade de ordens definido</p>",
+            "<p class='center-note'>O gradiente sera recorrente ou limitado a quantidade de ordens definido</p>",
             unsafe_allow_html=True,
         )
 
-        c1, c2 = st.columns(2)
-        with c1:
-            st.number_input(
-                "Quantidade de niveis",
-                min_value=0,
-                step=1,
-                key="quantidade_niveis_gradiente_linear",
-            )
-        with c2:
-            st.number_input(
-                "Distancia dos niveis",
-                min_value=0,
-                step=1,
-                key="distancia_niveis_gradiente_linear",
-            )
+        with st.container(border=True):
+            col_tc_ini, col_tc_fim = st.columns(2, gap="large")
+            with col_tc_ini:
+                st.selectbox(
+                    "📏 Tipo de calculo da distancia (Iniciar)",
+                    ["Em pontos", "Percentual"],
+                    key="tipo_calculo_gradiente_linear",
+                )
+            with col_tc_fim:
+                st.selectbox(
+                    "📏 Tipo de calculo da distancia (Finalizar)",
+                    ["Nao usar", "Em pontos", "Percentual"],
+                    key="final_tipo_calculo_gradiente_linear",
+                )
 
-        c3, c4 = st.columns(2)
-        with c3:
-            st.number_input(
-                "Volume das ordens",
-                min_value=0,
-                step=1,
-                key="volume_ordens_gradiente_linear",
-            )
-        with c4:
-            st.number_input(
-                "Alvo parcial",
-                min_value=0,
-                step=1,
-                key="alvo_parcial_gradiente_linear",
-            )
+            st.divider()
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
 
-        c5, c6 = st.columns(2)
-        with c5:
-            st.number_input(
-                "Limite de entradas",
-                min_value=0,
-                step=1,
-                key="limite_entradas_gradiente_linear",
-            )
-        with c6:
-            st.number_input(
-                "Reposicionar ordem",
-                min_value=0,
-                step=1,
-                key="reposicionar_ordem_gradiente_linear",
-            )
+            c_ini, c_passe, c_fim = st.columns(3, gap="large")
+
+            with c_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Inicial</p>", unsafe_allow_html=True)
+                st.number_input("Quantidade de niveis", min_value=0, step=1, key="quantidade_niveis_gradiente_linear")
+                st.number_input("Distancia dos niveis", min_value=0, step=1, key="distancia_niveis_gradiente_linear")
+                st.number_input("Volume das ordens", min_value=0, step=1, key="volume_ordens_gradiente_linear")
+                st.number_input("Alvo parcial", min_value=0, step=1, key="alvo_parcial_gradiente_linear")
+                st.number_input("Limite de entradas", min_value=0, step=1, key="limite_entradas_gradiente_linear")
+                st.number_input("Reposicionar ordem", min_value=0, step=1, key="reposicionar_ordem_gradiente_linear")
+
+            with c_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("Quantidade de niveis", min_value=0, step=1, key="quantidade_niveis_gradiente_linear_passe")
+                st.number_input("Distancia dos niveis", min_value=0, step=1, key="distancia_niveis_gradiente_linear_passe")
+                st.number_input("Volume das ordens", min_value=0, step=1, key="volume_ordens_gradiente_linear_passe")
+                st.number_input("Alvo parcial", min_value=0, step=1, key="alvo_parcial_gradiente_linear_passe")
+                st.number_input("Limite de entradas", min_value=0, step=1, key="limite_entradas_gradiente_linear_passe")
+                st.number_input("Reposicionar ordem", min_value=0, step=1, key="reposicionar_ordem_gradiente_linear_passe")
+
+            with c_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Final</p>", unsafe_allow_html=True)
+                st.number_input("Quantidade de niveis", min_value=0, step=1, key="final_quantidade_niveis_gradiente_linear")
+                st.number_input("Distancia dos niveis", min_value=0, step=1, key="final_distancia_niveis_gradiente_linear")
+                st.number_input("Volume das ordens", min_value=0, step=1, key="final_volume_ordens_gradiente_linear")
+                st.number_input("Alvo parcial", min_value=0, step=1, key="final_alvo_parcial_gradiente_linear")
+                st.number_input("Limite de entradas", min_value=0, step=1, key="final_limite_entradas_gradiente_linear")
+                st.number_input("Reposicionar ordem", min_value=0, step=1, key="final_reposicionar_ordem_gradiente_linear")
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -2414,76 +2473,77 @@ if st.session_state.etapa == 16:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>FILTRO DE VELA</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>16. FILTRO DE VELA</h3>", unsafe_allow_html=True)
 
         st.markdown(
-            "<p style='text-align: center;'>O tempo grafico da vela filtro nao precisa ser igual ao do grafico corrente</p>",
+            "<p class='center-note'>O tempo grafico da vela filtro nao precisa ser igual ao do grafico corrente</p>",
             unsafe_allow_html=True,
         )
 
-        st.selectbox(
-            "Tempo grafico da vela",
-            [
-                "Corrente",
-                "1 Minuto (M1)",
-                "2 Minutos (M2)",
-                "3 Minutos (M3)",
-                "4 Minutos (M4)",
-                "5 Minutos (M5)",
-                "6 Minutos (M6)",
-                "10 Minutos (M10)",
-                "15 Minutos (M15)",
-                "30 Minutos (M30)",
-                "1 Hora (H1)",
-                "2 Horas (H2)",
-                "3 Horas (H3)",
-                "4 Horas (H4)",
-                "6 Horas (H6)",
-                "8 Horas (H8)",
-                "12 Horas (H12)",
-                "1 Dia (D1)",
-                "1 Semana (W1)",
-                "1 Mes (MN1)",
-            ],
-            key="tempo_grafico_vela_filtro",
-        )
-
         st.markdown(
-            "<p style='text-align: center;'>Aplicado sempre antes de iniciar uma nova posicao</p>",
+            "<p class='center-note'>Aplicado sempre antes de iniciar uma nova posicao</p>",
             unsafe_allow_html=True,
         )
 
-        c1, c2 = st.columns(2)
-        with c1:
-            st.number_input(
-                "Tamanho minimo da vela",
-                min_value=0,
-                step=1,
-                key="tamanho_minimo_vela_filtro",
-            )
-        with c2:
-            st.number_input(
-                "Tamanho maximo da vela",
-                min_value=0,
-                step=1,
-                key="tamanho_maximo_vela_filtro",
-            )
+        tempos_grafico = [
+            "Corrente",
+            "1 Minuto (M1)",
+            "2 Minutos (M2)",
+            "3 Minutos (M3)",
+            "4 Minutos (M4)",
+            "5 Minutos (M5)",
+            "6 Minutos (M6)",
+            "10 Minutos (M10)",
+            "15 Minutos (M15)",
+            "30 Minutos (M30)",
+            "1 Hora (H1)",
+            "2 Horas (H2)",
+            "3 Horas (H3)",
+            "4 Horas (H4)",
+            "6 Horas (H6)",
+            "8 Horas (H8)",
+            "12 Horas (H12)",
+            "1 Dia (D1)",
+            "1 Semana (W1)",
+            "1 Mes (MN1)",
+        ]
 
-        c3, c4 = st.columns(2)
-        with c3:
-            st.number_input(
-                "Minimo do corpo da vela",
-                min_value=0,
-                step=1,
-                key="minimo_corpo_vela_filtro",
-            )
-        with c4:
-            st.number_input(
-                "Maximo do corpo da vela",
-                min_value=0,
-                step=1,
-                key="maximo_corpo_vela_filtro",
-            )
+        with st.container(border=True):
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
+
+            col_t_ini, col_t_fim = st.columns(2, gap="large")
+            with col_t_ini:
+                st.selectbox("🕒 Tempo grafico da vela (Iniciar)", tempos_grafico, key="tempo_grafico_vela_filtro")
+            with col_t_fim:
+                st.selectbox(
+                    "🕒 Tempo grafico da vela (Finalizar)",
+                    ["Nao usar", *tempos_grafico],
+                    key="final_tempo_grafico_vela_filtro",
+                )
+
+            st.divider()
+
+            c_ini, c_passe, c_fim = st.columns(3, gap="large")
+            with c_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Inicial</p>", unsafe_allow_html=True)
+                st.number_input("Tamanho minimo da vela", min_value=0, step=1, key="tamanho_minimo_vela_filtro")
+                st.number_input("Tamanho maximo da vela", min_value=0, step=1, key="tamanho_maximo_vela_filtro")
+                st.number_input("Minimo do corpo da vela", min_value=0, step=1, key="minimo_corpo_vela_filtro")
+                st.number_input("Maximo do corpo da vela", min_value=0, step=1, key="maximo_corpo_vela_filtro")
+
+            with c_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("Tamanho minimo da vela", min_value=0, step=1, key="tamanho_minimo_vela_filtro_passe")
+                st.number_input("Tamanho maximo da vela", min_value=0, step=1, key="tamanho_maximo_vela_filtro_passe")
+                st.number_input("Minimo do corpo da vela", min_value=0, step=1, key="minimo_corpo_vela_filtro_passe")
+                st.number_input("Maximo do corpo da vela", min_value=0, step=1, key="maximo_corpo_vela_filtro_passe")
+
+            with c_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Final</p>", unsafe_allow_html=True)
+                st.number_input("Tamanho minimo da vela", min_value=0, step=1, key="final_tamanho_minimo_vela_filtro")
+                st.number_input("Tamanho maximo da vela", min_value=0, step=1, key="final_tamanho_maximo_vela_filtro")
+                st.number_input("Minimo do corpo da vela", min_value=0, step=1, key="final_minimo_corpo_vela_filtro")
+                st.number_input("Maximo do corpo da vela", min_value=0, step=1, key="final_maximo_corpo_vela_filtro")
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
