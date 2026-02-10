@@ -575,47 +575,119 @@ if "sinais_entrada_venda_salvo" not in st.session_state:
 if "limites_robo_historico" not in st.session_state:
     st.session_state.limites_robo_historico = "Desabilitado"
 
+if "final_limites_robo_historico" not in st.session_state:
+    st.session_state.final_limites_robo_historico = "Nao usar"
+
 if "limites_robo_calculo" not in st.session_state:
     st.session_state.limites_robo_calculo = "Financeiro"
+
+if "final_limites_robo_calculo" not in st.session_state:
+    st.session_state.final_limites_robo_calculo = "Nao usar"
 
 if "limites_robo_vencedoras" not in st.session_state:
     st.session_state.limites_robo_vencedoras = 0
 
+if "limites_robo_vencedoras_passe" not in st.session_state:
+    st.session_state.limites_robo_vencedoras_passe = 0
+
+if "final_limites_robo_vencedoras" not in st.session_state:
+    st.session_state.final_limites_robo_vencedoras = 0
+
 if "limites_robo_perdedoras" not in st.session_state:
     st.session_state.limites_robo_perdedoras = 0
+
+if "limites_robo_perdedoras_passe" not in st.session_state:
+    st.session_state.limites_robo_perdedoras_passe = 0
+
+if "final_limites_robo_perdedoras" not in st.session_state:
+    st.session_state.final_limites_robo_perdedoras = 0
 
 if "limites_robo_limite_total" not in st.session_state:
     st.session_state.limites_robo_limite_total = 0
 
+if "limites_robo_limite_total_passe" not in st.session_state:
+    st.session_state.limites_robo_limite_total_passe = 0
+
+if "final_limites_robo_limite_total" not in st.session_state:
+    st.session_state.final_limites_robo_limite_total = 0
+
 if "limites_robo_meta_ganho" not in st.session_state:
     st.session_state.limites_robo_meta_ganho = 0
+
+if "limites_robo_meta_ganho_passe" not in st.session_state:
+    st.session_state.limites_robo_meta_ganho_passe = 0
+
+if "final_limites_robo_meta_ganho" not in st.session_state:
+    st.session_state.final_limites_robo_meta_ganho = 0
 
 if "limites_robo_encerrar_meta_ganho" not in st.session_state:
     st.session_state.limites_robo_encerrar_meta_ganho = "Sim"
 
+if "final_limites_robo_encerrar_meta_ganho" not in st.session_state:
+    st.session_state.final_limites_robo_encerrar_meta_ganho = "Nao usar"
+
 if "limites_robo_limite_perda" not in st.session_state:
     st.session_state.limites_robo_limite_perda = 0
+
+if "limites_robo_limite_perda_passe" not in st.session_state:
+    st.session_state.limites_robo_limite_perda_passe = 0
+
+if "final_limites_robo_limite_perda" not in st.session_state:
+    st.session_state.final_limites_robo_limite_perda = 0
 
 if "limites_robo_encerrar_limite_perda" not in st.session_state:
     st.session_state.limites_robo_encerrar_limite_perda = "Sim"
 
+if "final_limites_robo_encerrar_limite_perda" not in st.session_state:
+    st.session_state.final_limites_robo_encerrar_limite_perda = "Nao usar"
+
 if "limites_robo_rebaixamento" not in st.session_state:
     st.session_state.limites_robo_rebaixamento = 0
+
+if "limites_robo_rebaixamento_passe" not in st.session_state:
+    st.session_state.limites_robo_rebaixamento_passe = 0
+
+if "final_limites_robo_rebaixamento" not in st.session_state:
+    st.session_state.final_limites_robo_rebaixamento = 0
 
 if "limites_robo_encerrar_rebaixamento" not in st.session_state:
     st.session_state.limites_robo_encerrar_rebaixamento = "Não"
 
+if "final_limites_robo_encerrar_rebaixamento" not in st.session_state:
+    st.session_state.final_limites_robo_encerrar_rebaixamento = "Nao usar"
+
 if "limites_robo_gatilho_rebaixamento" not in st.session_state:
     st.session_state.limites_robo_gatilho_rebaixamento = 0
+
+if "limites_robo_gatilho_rebaixamento_passe" not in st.session_state:
+    st.session_state.limites_robo_gatilho_rebaixamento_passe = 0
+
+if "final_limites_robo_gatilho_rebaixamento" not in st.session_state:
+    st.session_state.final_limites_robo_gatilho_rebaixamento = 0
 
 if "limites_robo_recuperacao" not in st.session_state:
     st.session_state.limites_robo_recuperacao = 0
 
+if "limites_robo_recuperacao_passe" not in st.session_state:
+    st.session_state.limites_robo_recuperacao_passe = 0
+
+if "final_limites_robo_recuperacao" not in st.session_state:
+    st.session_state.final_limites_robo_recuperacao = 0
+
 if "limites_robo_encerrar_recuperacao" not in st.session_state:
     st.session_state.limites_robo_encerrar_recuperacao = "Não"
 
+if "final_limites_robo_encerrar_recuperacao" not in st.session_state:
+    st.session_state.final_limites_robo_encerrar_recuperacao = "Nao usar"
+
 if "limites_robo_gatilho_recuperacao" not in st.session_state:
     st.session_state.limites_robo_gatilho_recuperacao = 0
+
+if "limites_robo_gatilho_recuperacao_passe" not in st.session_state:
+    st.session_state.limites_robo_gatilho_recuperacao_passe = 0
+
+if "final_limites_robo_gatilho_recuperacao" not in st.session_state:
+    st.session_state.final_limites_robo_gatilho_recuperacao = 0
 
 if "limites_robo_salvo" not in st.session_state:
     st.session_state.limites_robo_salvo = False
@@ -623,53 +695,128 @@ if "limites_robo_salvo" not in st.session_state:
 if "conta_historico" not in st.session_state:
     st.session_state.conta_historico = "Desabilitado"
 
+if "final_conta_historico" not in st.session_state:
+    st.session_state.final_conta_historico = "Nao usar"
+
 if "conta_calculo" not in st.session_state:
     st.session_state.conta_calculo = "Financeiro"
+
+if "final_conta_calculo" not in st.session_state:
+    st.session_state.final_conta_calculo = "Nao usar"
 
 if "conta_filtro_ativo" not in st.session_state:
     st.session_state.conta_filtro_ativo = "Não"
 
+if "final_conta_filtro_ativo" not in st.session_state:
+    st.session_state.final_conta_filtro_ativo = "Nao usar"
+
 if "conta_excluir_manuais" not in st.session_state:
     st.session_state.conta_excluir_manuais = "Não"
+
+if "final_conta_excluir_manuais" not in st.session_state:
+    st.session_state.final_conta_excluir_manuais = "Nao usar"
 
 if "conta_filtrar_robos" not in st.session_state:
     st.session_state.conta_filtrar_robos = "Não"
 
+if "final_conta_filtrar_robos" not in st.session_state:
+    st.session_state.final_conta_filtrar_robos = "Nao usar"
+
 if "conta_id_minimo" not in st.session_state:
     st.session_state.conta_id_minimo = 0
+
+if "conta_id_minimo_passe" not in st.session_state:
+    st.session_state.conta_id_minimo_passe = 0
+
+if "final_conta_id_minimo" not in st.session_state:
+    st.session_state.final_conta_id_minimo = 0
 
 if "conta_id_maximo" not in st.session_state:
     st.session_state.conta_id_maximo = 0
 
+if "conta_id_maximo_passe" not in st.session_state:
+    st.session_state.conta_id_maximo_passe = 0
+
+if "final_conta_id_maximo" not in st.session_state:
+    st.session_state.final_conta_id_maximo = 0
+
 if "conta_meta_ganho" not in st.session_state:
     st.session_state.conta_meta_ganho = 0
+
+if "conta_meta_ganho_passe" not in st.session_state:
+    st.session_state.conta_meta_ganho_passe = 0
+
+if "final_conta_meta_ganho" not in st.session_state:
+    st.session_state.final_conta_meta_ganho = 0
 
 if "conta_encerrar_meta_ganho" not in st.session_state:
     st.session_state.conta_encerrar_meta_ganho = "Sim"
 
+if "final_conta_encerrar_meta_ganho" not in st.session_state:
+    st.session_state.final_conta_encerrar_meta_ganho = "Nao usar"
+
 if "conta_limite_perda" not in st.session_state:
     st.session_state.conta_limite_perda = 0
+
+if "conta_limite_perda_passe" not in st.session_state:
+    st.session_state.conta_limite_perda_passe = 0
+
+if "final_conta_limite_perda" not in st.session_state:
+    st.session_state.final_conta_limite_perda = 0
 
 if "conta_encerrar_limite_perda" not in st.session_state:
     st.session_state.conta_encerrar_limite_perda = "Sim"
 
+if "final_conta_encerrar_limite_perda" not in st.session_state:
+    st.session_state.final_conta_encerrar_limite_perda = "Nao usar"
+
 if "conta_rebaixamento" not in st.session_state:
     st.session_state.conta_rebaixamento = 0
+
+if "conta_rebaixamento_passe" not in st.session_state:
+    st.session_state.conta_rebaixamento_passe = 0
+
+if "final_conta_rebaixamento" not in st.session_state:
+    st.session_state.final_conta_rebaixamento = 0
 
 if "conta_encerrar_rebaixamento" not in st.session_state:
     st.session_state.conta_encerrar_rebaixamento = "Não"
 
+if "final_conta_encerrar_rebaixamento" not in st.session_state:
+    st.session_state.final_conta_encerrar_rebaixamento = "Nao usar"
+
 if "conta_gatilho_rebaixamento" not in st.session_state:
     st.session_state.conta_gatilho_rebaixamento = 0
+
+if "conta_gatilho_rebaixamento_passe" not in st.session_state:
+    st.session_state.conta_gatilho_rebaixamento_passe = 0
+
+if "final_conta_gatilho_rebaixamento" not in st.session_state:
+    st.session_state.final_conta_gatilho_rebaixamento = 0
 
 if "conta_recuperacao" not in st.session_state:
     st.session_state.conta_recuperacao = 0
 
+if "conta_recuperacao_passe" not in st.session_state:
+    st.session_state.conta_recuperacao_passe = 0
+
+if "final_conta_recuperacao" not in st.session_state:
+    st.session_state.final_conta_recuperacao = 0
+
 if "conta_encerrar_recuperacao" not in st.session_state:
     st.session_state.conta_encerrar_recuperacao = "Não"
 
+if "final_conta_encerrar_recuperacao" not in st.session_state:
+    st.session_state.final_conta_encerrar_recuperacao = "Nao usar"
+
 if "conta_gatilho_recuperacao" not in st.session_state:
     st.session_state.conta_gatilho_recuperacao = 0
+
+if "conta_gatilho_recuperacao_passe" not in st.session_state:
+    st.session_state.conta_gatilho_recuperacao_passe = 0
+
+if "final_conta_gatilho_recuperacao" not in st.session_state:
+    st.session_state.final_conta_gatilho_recuperacao = 0
 
 if "permissoes_gestao_conta_salvo" not in st.session_state:
     st.session_state.permissoes_gestao_conta_salvo = False
@@ -677,29 +824,56 @@ if "permissoes_gestao_conta_salvo" not in st.session_state:
 if "ajuste_cancelar_pendente_entrada_sinal_oposto" not in st.session_state:
     st.session_state.ajuste_cancelar_pendente_entrada_sinal_oposto = "Não"
 
+if "final_ajuste_cancelar_pendente_entrada_sinal_oposto" not in st.session_state:
+    st.session_state.final_ajuste_cancelar_pendente_entrada_sinal_oposto = "Nao usar"
+
 if "ajuste_reposicionar_stoploss_aumento_favor" not in st.session_state:
     st.session_state.ajuste_reposicionar_stoploss_aumento_favor = "Não"
+
+if "final_ajuste_reposicionar_stoploss_aumento_favor" not in st.session_state:
+    st.session_state.final_ajuste_reposicionar_stoploss_aumento_favor = "Nao usar"
 
 if "ajuste_reposicionar_takeprofit_aumento_contra" not in st.session_state:
     st.session_state.ajuste_reposicionar_takeprofit_aumento_contra = "Não"
 
+if "final_ajuste_reposicionar_takeprofit_aumento_contra" not in st.session_state:
+    st.session_state.final_ajuste_reposicionar_takeprofit_aumento_contra = "Nao usar"
+
 if "ajuste_movimentar_stoploss_preco_medio" not in st.session_state:
     st.session_state.ajuste_movimentar_stoploss_preco_medio = "Não"
+
+if "final_ajuste_movimentar_stoploss_preco_medio" not in st.session_state:
+    st.session_state.final_ajuste_movimentar_stoploss_preco_medio = "Nao usar"
 
 if "ajuste_movimentar_takeprofit_preco_medio" not in st.session_state:
     st.session_state.ajuste_movimentar_takeprofit_preco_medio = "Não"
 
+if "final_ajuste_movimentar_takeprofit_preco_medio" not in st.session_state:
+    st.session_state.final_ajuste_movimentar_takeprofit_preco_medio = "Nao usar"
+
 if "ajuste_usar_preco_medio_parciais" not in st.session_state:
     st.session_state.ajuste_usar_preco_medio_parciais = "Não"
+
+if "final_ajuste_usar_preco_medio_parciais" not in st.session_state:
+    st.session_state.final_ajuste_usar_preco_medio_parciais = "Nao usar"
 
 if "ajuste_impedir_saida_vela_entrada" not in st.session_state:
     st.session_state.ajuste_impedir_saida_vela_entrada = "Não"
 
+if "final_ajuste_impedir_saida_vela_entrada" not in st.session_state:
+    st.session_state.final_ajuste_impedir_saida_vela_entrada = "Nao usar"
+
 if "ajuste_impedir_entrada_vela_saida" not in st.session_state:
     st.session_state.ajuste_impedir_entrada_vela_saida = "Não"
 
+if "final_ajuste_impedir_entrada_vela_saida" not in st.session_state:
+    st.session_state.final_ajuste_impedir_entrada_vela_saida = "Nao usar"
+
 if "ajuste_recalcular_preco_medio_saidas_parciais" not in st.session_state:
     st.session_state.ajuste_recalcular_preco_medio_saidas_parciais = "Não"
+
+if "final_ajuste_recalcular_preco_medio_saidas_parciais" not in st.session_state:
+    st.session_state.final_ajuste_recalcular_preco_medio_saidas_parciais = "Nao usar"
 
 if "ajustes_finais_salvo" not in st.session_state:
     st.session_state.ajustes_finais_salvo = False
@@ -707,14 +881,29 @@ if "ajustes_finais_salvo" not in st.session_state:
 if "comp_enviar_ordem_outro_ativo" not in st.session_state:
     st.session_state.comp_enviar_ordem_outro_ativo = "Não"
 
+if "final_comp_enviar_ordem_outro_ativo" not in st.session_state:
+    st.session_state.final_comp_enviar_ordem_outro_ativo = "Nao usar"
+
 if "comp_procurar_entrada_vela_seguinte_saida" not in st.session_state:
     st.session_state.comp_procurar_entrada_vela_seguinte_saida = "Não"
+
+if "final_comp_procurar_entrada_vela_seguinte_saida" not in st.session_state:
+    st.session_state.final_comp_procurar_entrada_vela_seguinte_saida = "Nao usar"
 
 if "comp_procurar_saida_vela_seguinte_entrada" not in st.session_state:
     st.session_state.comp_procurar_saida_vela_seguinte_entrada = "Não"
 
+if "final_comp_procurar_saida_vela_seguinte_entrada" not in st.session_state:
+    st.session_state.final_comp_procurar_saida_vela_seguinte_entrada = "Nao usar"
+
 if "comp_saldo_ajuste" not in st.session_state:
     st.session_state.comp_saldo_ajuste = 0
+
+if "comp_saldo_ajuste_passe" not in st.session_state:
+    st.session_state.comp_saldo_ajuste_passe = 0
+
+if "final_comp_saldo_ajuste" not in st.session_state:
+    st.session_state.final_comp_saldo_ajuste = 0
 
 if "complementos_salvo" not in st.session_state:
     st.session_state.complementos_salvo = False
@@ -2899,27 +3088,25 @@ if st.session_state.etapa == 19:
         if st.session_state.escolher_indicadores_salvo:
             st.success("Indicadores salvos.")
 if st.session_state.etapa == 21:
-    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+    st.markdown("<h3 style='text-align: center;'>🟢 21. SINAIS ENTRADA COMPRA</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
 
-    with col_centro:
-        st.markdown("<h3 style='text-align: center;'>SINAIS ENTRADA COMPRA</h3>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='text-align: center;'>No modo de edição avançado, poderá multiplicar, dividir, somar ou subtrair os valores de referência</p>",
+        unsafe_allow_html=True,
+    )
 
-        st.markdown(
-            "<p style='text-align: center;'>No modo de edição avançado, poderá multiplicar, dividir, somar ou subtrair os valores de referência</p>",
-            unsafe_allow_html=True,
-        )
+    with st.container(border=True):
+        st.markdown("<h4 style='text-align: center;'>⚙️ Configurações gerais</h4>", unsafe_allow_html=True)
 
-        st.markdown("<h4 style='text-align: center;'>Configurações gerais</h4>", unsafe_allow_html=True)
-
-        g1, g2, g3 = st.columns(3)
+        g1, g2, g3 = st.columns(3, gap="large")
         with g1:
-            st.selectbox("Modo de edição", ["Avançado", "Básico"], key="sec_modo_edicao")
+            st.selectbox("⚙️ Modo de edição", ["Avançado", "Básico"], key="sec_modo_edicao")
         with g2:
-            st.selectbox("Tipo de vela", ["Completas", "Simplificadas"], key="sec_tipo_vela")
+            st.selectbox("🕯️ Tipo de vela", ["Completas", "Simplificadas"], key="sec_tipo_vela")
         with g3:
             st.selectbox(
-                "Estratégia",
+                "🧩 Estratégia",
                 ["Entrada compra (1)", "Entrada compra (2)", "Entrada compra (3)"],
                 key="sec_estrategia",
             )
@@ -2929,7 +3116,8 @@ if st.session_state.etapa == 21:
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>Regras condicionais</h4>", unsafe_allow_html=True)
+        st.divider()
+        st.markdown("<h4 style='text-align: center;'>🧠 Regras condicionais</h4>", unsafe_allow_html=True)
 
         opcoes_operador_logico = ["SE", "E", "OU", "E SE", "OU SE", "E Também", "OU Também"]
         opcoes_referencia = [
@@ -2965,22 +3153,22 @@ if st.session_state.etapa == 21:
             "Cruzar & fechar abaixo de",
         ]
 
-        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3], gap="small")
         with h1:
-            st.caption("Operador lógico")
+            st.caption("🔗 Lógico")
         with h2:
-            st.caption("Referência esquerda")
+            st.caption("⬅️ Ref esq.")
         with h3:
-            st.caption("Vela (esq.)")
+            st.caption("🕯️ Vela esq.")
         with h4:
-            st.caption("Operador")
+            st.caption("⚖️ Comp.")
         with h5:
-            st.caption("Referência direita")
+            st.caption("➡️ Ref dir.")
         with h6:
-            st.caption("Vela (dir.)")
+            st.caption("🕯️ Vela dir.")
 
         for i in range(1, 6):
-            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3], gap="small")
             with c1:
                 st.selectbox(
                     f"Operador lógico {i}",
@@ -3028,42 +3216,40 @@ if st.session_state.etapa == 21:
             "As 5 linhas são cópias exatas da primeira. A lógica é condicional sequencial, usando operadores (SE, E, OU, etc.)."
         )
 
-        nav_esq, nav_dir = st.columns(2)
-        with nav_esq:
-            if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 19
-                st.rerun()
-        with nav_dir:
-            if st.button("Salvar", use_container_width=True):
-                st.session_state.sinais_entrada_compra_salvo = True
-                st.session_state.etapa = 22
-                st.rerun()
+    nav_esq, nav_dir = st.columns(2)
+    with nav_esq:
+        if st.button("Voltar", use_container_width=True):
+            st.session_state.etapa = 19
+            st.rerun()
+    with nav_dir:
+        if st.button("Salvar", use_container_width=True):
+            st.session_state.sinais_entrada_compra_salvo = True
+            st.session_state.etapa = 22
+            st.rerun()
 
-        if st.session_state.sinais_entrada_compra_salvo:
-            st.success("Configurações de sinais de entrada (compra) salvas.")
+    if st.session_state.sinais_entrada_compra_salvo:
+        st.success("Configurações de sinais de entrada (compra) salvas.")
 
 if st.session_state.etapa == 22:
-    col_esq, col_centro, col_dir = st.columns([1, 2, 1])
+    st.markdown("<h3 style='text-align: center;'>🔴 22. SINAIS ENTRADA VENDA</h3>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
 
-    with col_centro:
-        st.markdown("<h3 style='text-align: center;'>SINAIS ENTRADA VENDA</h3>", unsafe_allow_html=True)
-        st.markdown("<p style='text-align: center; opacity: 0.75;'>Página 1/1</p>", unsafe_allow_html=True)
+    st.markdown(
+        "<p style='text-align: center;'>No modo de edição básico, tem 4 opções de velas de referência</p>",
+        unsafe_allow_html=True,
+    )
 
-        st.markdown(
-            "<p style='text-align: center;'>No modo de edição básico, tem 4 opções de velas de referência</p>",
-            unsafe_allow_html=True,
-        )
+    with st.container(border=True):
+        st.markdown("<h4 style='text-align: center;'>⚙️ Configurações gerais</h4>", unsafe_allow_html=True)
 
-        st.markdown("<h4 style='text-align: center;'>Configurações gerais</h4>", unsafe_allow_html=True)
-
-        g1, g2, g3 = st.columns(3)
+        g1, g2, g3 = st.columns(3, gap="large")
         with g1:
-            st.selectbox("Modo de edição", ["Avançado", "Básico"], key="sev_modo_edicao")
+            st.selectbox("⚙️ Modo de edição", ["Avançado", "Básico"], key="sev_modo_edicao")
         with g2:
-            st.selectbox("Tipo de vela", ["Completas", "Simplificadas"], key="sev_tipo_vela")
+            st.selectbox("🕯️ Tipo de vela", ["Completas", "Simplificadas"], key="sev_tipo_vela")
         with g3:
             st.selectbox(
-                "Estratégia",
+                "🧩 Estratégia",
                 ["Entrada venda (1)", "Entrada venda (2)", "Entrada venda (3)"],
                 key="sev_estrategia",
             )
@@ -3073,7 +3259,8 @@ if st.session_state.etapa == 22:
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>Regras condicionais</h4>", unsafe_allow_html=True)
+        st.divider()
+        st.markdown("<h4 style='text-align: center;'>🧠 Regras condicionais</h4>", unsafe_allow_html=True)
 
         opcoes_operador_logico = ["SE", "E", "OU", "E SE", "OU SE", "E Também", "OU Também"]
         opcoes_referencia = [
@@ -3109,22 +3296,22 @@ if st.session_state.etapa == 22:
             "Cruzar & fechar abaixo de",
         ]
 
-        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+        h1, h2, h3, h4, h5, h6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3], gap="small")
         with h1:
-            st.caption("Operador lógico")
+            st.caption("🔗 Lógico")
         with h2:
-            st.caption("Referência esquerda")
+            st.caption("⬅️ Ref esq.")
         with h3:
-            st.caption("Vela (esq.)")
+            st.caption("🕯️ Vela esq.")
         with h4:
-            st.caption("Operador")
+            st.caption("⚖️ Comp.")
         with h5:
-            st.caption("Referência direita")
+            st.caption("➡️ Ref dir.")
         with h6:
-            st.caption("Vela (dir.)")
+            st.caption("🕯️ Vela dir.")
 
         for i in range(1, 6):
-            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3])
+            c1, c2, c3, c4, c5, c6 = st.columns([1.2, 2.2, 1.3, 2.2, 2.2, 1.3], gap="small")
             with c1:
                 st.selectbox(
                     f"Operador lógico {i}",
@@ -3168,121 +3355,176 @@ if st.session_state.etapa == 22:
                     label_visibility="collapsed",
                 )
 
-        st.info("As 5 linhas são cópias exatas da primeira. A lógica é condicional sequencial, usando operadores (SE, E, OU, etc.).")
+        st.info(
+            "As 5 linhas são cópias exatas da primeira. A lógica é condicional sequencial, usando operadores (SE, E, OU, etc.)."
+        )
 
-        nav_esq, nav_dir = st.columns(2)
-        with nav_esq:
-            if st.button("Voltar", use_container_width=True):
-                st.session_state.etapa = 21
-                st.rerun()
-        with nav_dir:
-            if st.button("Salvar", use_container_width=True):
-                st.session_state.sinais_entrada_venda_salvo = True
-                st.session_state.etapa = 23
-                st.rerun()
+    nav_esq, nav_dir = st.columns(2)
+    with nav_esq:
+        if st.button("Voltar", use_container_width=True):
+            st.session_state.etapa = 21
+            st.rerun()
+    with nav_dir:
+        if st.button("Salvar", use_container_width=True):
+            st.session_state.sinais_entrada_venda_salvo = True
+            st.session_state.etapa = 23
+            st.rerun()
 
-        if st.session_state.sinais_entrada_venda_salvo:
-            st.success("Configurações de sinais de entrada (venda) salvas.")
+    if st.session_state.sinais_entrada_venda_salvo:
+        st.success("Configurações de sinais de entrada (venda) salvas.")
 
 if st.session_state.etapa == 23:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>LIMITES DO ROBÔ</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>23. LIMITES DO ROBÔ</h3>", unsafe_allow_html=True)
 
         st.markdown(
             "<p style='text-align: center;'>Gerencie limite de ganho e perda para proteger sua conta bem como o cálculo de referência</p>",
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>Referências das metas</h4>", unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
 
-        r1, r2 = st.columns(2)
-        with r1:
-            st.selectbox(
-                "Histórico",
-                ["Desabilitado", "Diário", "Semanal", "Mensal"],
-                key="limites_robo_historico",
-            )
-        with r2:
-            st.selectbox(
-                "Cálculo",
-                ["Financeiro", "Percentual"],
-                key="limites_robo_calculo",
-            )
+            st.markdown("<h4 style='text-align: center;'>Referências das metas</h4>", unsafe_allow_html=True)
+            r1, r2 = st.columns(2, gap="large")
+            with r1:
+                st.selectbox(
+                    "📚 Histórico (Iniciar)",
+                    ["Desabilitado", "Diário", "Semanal", "Mensal"],
+                    key="limites_robo_historico",
+                )
+            with r2:
+                st.selectbox(
+                    "📚 Histórico (Finalizar)",
+                    ["Nao usar", "Desabilitado", "Diário", "Semanal", "Mensal"],
+                    key="final_limites_robo_historico",
+                )
 
-        st.markdown("<h4 style='text-align: center;'>Limite de operações</h4>", unsafe_allow_html=True)
+            c1, c2 = st.columns(2, gap="large")
+            with c1:
+                st.selectbox(
+                    "📏 Cálculo (Iniciar)",
+                    ["Financeiro", "Percentual"],
+                    key="limites_robo_calculo",
+                )
+            with c2:
+                st.selectbox(
+                    "📏 Cálculo (Finalizar)",
+                    ["Nao usar", "Financeiro", "Percentual"],
+                    key="final_limites_robo_calculo",
+                )
 
-        l1, l2, l3 = st.columns(3)
-        with l1:
-            st.number_input("Vencedoras", min_value=0, step=1, key="limites_robo_vencedoras")
-        with l2:
-            st.number_input("Perdedoras", min_value=0, step=1, key="limites_robo_perdedoras")
-        with l3:
-            st.number_input("Limite total", min_value=0, step=1, key="limites_robo_limite_total")
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>Limite de operações</h4>", unsafe_allow_html=True)
 
-        st.markdown("<h4 style='text-align: center;'>Metas financeiras e controle de encerramento</h4>", unsafe_allow_html=True)
+            l_ini, l_passe, l_fim = st.columns(3, gap="large")
+            with l_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Iniciar</p>", unsafe_allow_html=True)
+                st.number_input("Vencedoras", min_value=0, step=1, key="limites_robo_vencedoras")
+                st.number_input("Perdedoras", min_value=0, step=1, key="limites_robo_perdedoras")
+                st.number_input("Limite total", min_value=0, step=1, key="limites_robo_limite_total")
+            with l_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("Vencedoras", min_value=0, step=1, key="limites_robo_vencedoras_passe")
+                st.number_input("Perdedoras", min_value=0, step=1, key="limites_robo_perdedoras_passe")
+                st.number_input("Limite total", min_value=0, step=1, key="limites_robo_limite_total_passe")
+            with l_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Finalizar</p>", unsafe_allow_html=True)
+                st.number_input("Vencedoras", min_value=0, step=1, key="final_limites_robo_vencedoras")
+                st.number_input("Perdedoras", min_value=0, step=1, key="final_limites_robo_perdedoras")
+                st.number_input("Limite total", min_value=0, step=1, key="final_limites_robo_limite_total")
 
-        st.markdown(
-            "<p style='text-align: center;'>A referência equivale a moeda base da sua conta na corretora</p>",
-            unsafe_allow_html=True,
-        )
-
-        m1, m2 = st.columns(2)
-        with m1:
-            st.number_input("Meta de ganho", min_value=0, step=1, key="limites_robo_meta_ganho")
-        with m2:
-            st.selectbox(
-                "Encerrar no trade (Meta de ganho)",
-                ["Sim", "Não"],
-                key="limites_robo_encerrar_meta_ganho",
-            )
-
-        p1, p2 = st.columns(2)
-        with p1:
-            st.number_input("Limite de perda", min_value=0, step=1, key="limites_robo_limite_perda")
-        with p2:
-            st.selectbox(
-                "Encerrar no trade (Limite de perda)",
-                ["Sim", "Não"],
-                key="limites_robo_encerrar_limite_perda",
-            )
-
-        rb1, rb2 = st.columns(2)
-        with rb1:
-            st.number_input("Rebaixamento", min_value=0, step=1, key="limites_robo_rebaixamento")
-        with rb2:
-            st.selectbox(
-                "Encerrar no trade (Rebaixamento)",
-                ["Não", "Sim"],
-                key="limites_robo_encerrar_rebaixamento",
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>Metas financeiras e controle de encerramento</h4>", unsafe_allow_html=True)
+            st.markdown(
+                "<p style='text-align: center;'>A referência equivale a moeda base da sua conta na corretora</p>",
+                unsafe_allow_html=True,
             )
 
-        rb3, rb4 = st.columns(2)
-        with rb3:
-            st.number_input(
-                "Gatilho (Rebaixamento)",
-                min_value=0,
-                step=1,
-                key="limites_robo_gatilho_rebaixamento",
-            )
-        with rb4:
-            st.number_input("Recuperação", min_value=0, step=1, key="limites_robo_recuperacao")
+            m_ini, m_passe, m_fim = st.columns(3, gap="large")
+            with m_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Iniciar</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="limites_robo_meta_ganho")
+                st.number_input("Limite de perda", min_value=0, step=1, key="limites_robo_limite_perda")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="limites_robo_rebaixamento")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="limites_robo_gatilho_rebaixamento")
+                st.number_input("Recuperação", min_value=0, step=1, key="limites_robo_recuperacao")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="limites_robo_gatilho_recuperacao")
+            with m_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="limites_robo_meta_ganho_passe")
+                st.number_input("Limite de perda", min_value=0, step=1, key="limites_robo_limite_perda_passe")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="limites_robo_rebaixamento_passe")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="limites_robo_gatilho_rebaixamento_passe")
+                st.number_input("Recuperação", min_value=0, step=1, key="limites_robo_recuperacao_passe")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="limites_robo_gatilho_recuperacao_passe")
+            with m_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Finalizar</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="final_limites_robo_meta_ganho")
+                st.number_input("Limite de perda", min_value=0, step=1, key="final_limites_robo_limite_perda")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="final_limites_robo_rebaixamento")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="final_limites_robo_gatilho_rebaixamento")
+                st.number_input("Recuperação", min_value=0, step=1, key="final_limites_robo_recuperacao")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="final_limites_robo_gatilho_recuperacao")
 
-        rc1, rc2 = st.columns(2)
-        with rc1:
-            st.selectbox(
-                "Encerrar no trade (Recuperação)",
-                ["Não", "Sim"],
-                key="limites_robo_encerrar_recuperacao",
-            )
-        with rc2:
-            st.number_input(
-                "Gatilho (Recuperação)",
-                min_value=0,
-                step=1,
-                key="limites_robo_gatilho_recuperacao",
-            )
+            st.divider()
+            e1, e2 = st.columns(2, gap="large")
+            with e1:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Meta de ganho) - Iniciar",
+                    ["Sim", "Não"],
+                    key="limites_robo_encerrar_meta_ganho",
+                )
+            with e2:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Meta de ganho) - Finalizar",
+                    ["Nao usar", "Sim", "Não"],
+                    key="final_limites_robo_encerrar_meta_ganho",
+                )
+
+            e3, e4 = st.columns(2, gap="large")
+            with e3:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Limite de perda) - Iniciar",
+                    ["Sim", "Não"],
+                    key="limites_robo_encerrar_limite_perda",
+                )
+            with e4:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Limite de perda) - Finalizar",
+                    ["Nao usar", "Sim", "Não"],
+                    key="final_limites_robo_encerrar_limite_perda",
+                )
+
+            e5, e6 = st.columns(2, gap="large")
+            with e5:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Rebaixamento) - Iniciar",
+                    ["Não", "Sim"],
+                    key="limites_robo_encerrar_rebaixamento",
+                )
+            with e6:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Rebaixamento) - Finalizar",
+                    ["Nao usar", "Não", "Sim"],
+                    key="final_limites_robo_encerrar_rebaixamento",
+                )
+
+            e7, e8 = st.columns(2, gap="large")
+            with e7:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Recuperação) - Iniciar",
+                    ["Não", "Sim"],
+                    key="limites_robo_encerrar_recuperacao",
+                )
+            with e8:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Recuperação) - Finalizar",
+                    ["Nao usar", "Não", "Sim"],
+                    key="final_limites_robo_encerrar_recuperacao",
+                )
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -3302,95 +3544,174 @@ if st.session_state.etapa == 24:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
+        st.markdown("<h3 style='text-align: center;'>24. PERMISSÕES / GESTÃO DA CONTA</h3>", unsafe_allow_html=True)
+
         st.markdown(
             "<p style='text-align: center;'>Gerencie toda a conta combinando com as permissões do robô</p>",
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>Referências das metas (nível conta)</h4>", unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
 
-        r1, r2 = st.columns(2)
-        with r1:
-            st.selectbox(
-                "Histórico",
-                ["Desabilitado", "Diário", "Semanal", "Mensal"],
-                key="conta_historico",
+            st.markdown("<h4 style='text-align: center;'>Referências das metas (nível conta)</h4>", unsafe_allow_html=True)
+
+            r1, r2 = st.columns(2, gap="large")
+            with r1:
+                st.selectbox(
+                    "📚 Histórico (Iniciar)",
+                    ["Desabilitado", "Diário", "Semanal", "Mensal"],
+                    key="conta_historico",
+                )
+            with r2:
+                st.selectbox(
+                    "📚 Histórico (Finalizar)",
+                    ["Nao usar", "Desabilitado", "Diário", "Semanal", "Mensal"],
+                    key="final_conta_historico",
+                )
+
+            c1, c2 = st.columns(2, gap="large")
+            with c1:
+                st.selectbox(
+                    "📏 Cálculo (Iniciar)",
+                    ["Financeiro", "Percentual"],
+                    key="conta_calculo",
+                )
+            with c2:
+                st.selectbox(
+                    "📏 Cálculo (Finalizar)",
+                    ["Nao usar", "Financeiro", "Percentual"],
+                    key="final_conta_calculo",
+                )
+
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>Seleção de filtros</h4>", unsafe_allow_html=True)
+
+            f1, f2 = st.columns(2, gap="large")
+            with f1:
+                st.selectbox("🔎 Filtro de ativo (Iniciar)", ["Não", "Sim"], key="conta_filtro_ativo")
+            with f2:
+                st.selectbox("🔎 Filtro de ativo (Finalizar)", ["Nao usar", "Não", "Sim"], key="final_conta_filtro_ativo")
+
+            f3, f4 = st.columns(2, gap="large")
+            with f3:
+                st.selectbox("🧹 Excluir manuais (Iniciar)", ["Não", "Sim"], key="conta_excluir_manuais")
+            with f4:
+                st.selectbox("🧹 Excluir manuais (Finalizar)", ["Nao usar", "Não", "Sim"], key="final_conta_excluir_manuais")
+
+            f5, f6 = st.columns(2, gap="large")
+            with f5:
+                st.selectbox("🤖 Filtrar robôs (Iniciar)", ["Não", "Sim"], key="conta_filtrar_robos")
+            with f6:
+                st.selectbox("🤖 Filtrar robôs (Finalizar)", ["Nao usar", "Não", "Sim"], key="final_conta_filtrar_robos")
+
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>Faixa de IDs</h4>", unsafe_allow_html=True)
+
+            id_ini, id_passe, id_fim = st.columns(3, gap="large")
+            with id_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Iniciar</p>", unsafe_allow_html=True)
+                st.number_input("ID mínimo", min_value=0, step=1, key="conta_id_minimo")
+                st.number_input("ID máximo", min_value=0, step=1, key="conta_id_maximo")
+            with id_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("ID mínimo", min_value=0, step=1, key="conta_id_minimo_passe")
+                st.number_input("ID máximo", min_value=0, step=1, key="conta_id_maximo_passe")
+            with id_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Finalizar</p>", unsafe_allow_html=True)
+                st.number_input("ID mínimo", min_value=0, step=1, key="final_conta_id_minimo")
+                st.number_input("ID máximo", min_value=0, step=1, key="final_conta_id_maximo")
+
+            st.divider()
+            st.markdown("<h4 style='text-align: center;'>Metas financeiras (nível conta)</h4>", unsafe_allow_html=True)
+
+            st.markdown(
+                "<p style='text-align: center;'>Os dados valem para toda a conta para execução deste robô</p>",
+                unsafe_allow_html=True,
             )
-        with r2:
-            st.selectbox(
-                "Cálculo",
-                ["Financeiro", "Percentual"],
-                key="conta_calculo",
-            )
 
-        st.markdown("<h4 style='text-align: center;'>Seleção de filtros</h4>", unsafe_allow_html=True)
+            m_ini, m_passe, m_fim = st.columns(3, gap="large")
+            with m_ini:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Iniciar</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="conta_meta_ganho")
+                st.number_input("Limite de perda", min_value=0, step=1, key="conta_limite_perda")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="conta_rebaixamento")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="conta_gatilho_rebaixamento")
+                st.number_input("Recuperação", min_value=0, step=1, key="conta_recuperacao")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="conta_gatilho_recuperacao")
+            with m_passe:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="conta_meta_ganho_passe")
+                st.number_input("Limite de perda", min_value=0, step=1, key="conta_limite_perda_passe")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="conta_rebaixamento_passe")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="conta_gatilho_rebaixamento_passe")
+                st.number_input("Recuperação", min_value=0, step=1, key="conta_recuperacao_passe")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="conta_gatilho_recuperacao_passe")
+            with m_fim:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Finalizar</p>", unsafe_allow_html=True)
+                st.number_input("Meta de ganho", min_value=0, step=1, key="final_conta_meta_ganho")
+                st.number_input("Limite de perda", min_value=0, step=1, key="final_conta_limite_perda")
+                st.number_input("Rebaixamento", min_value=0, step=1, key="final_conta_rebaixamento")
+                st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="final_conta_gatilho_rebaixamento")
+                st.number_input("Recuperação", min_value=0, step=1, key="final_conta_recuperacao")
+                st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="final_conta_gatilho_recuperacao")
 
-        f1, f2, f3 = st.columns(3)
-        with f1:
-            st.selectbox("Filtro de ativo", ["Não", "Sim"], key="conta_filtro_ativo")
-        with f2:
-            st.selectbox("Excluir manuais", ["Não", "Sim"], key="conta_excluir_manuais")
-        with f3:
-            st.selectbox("Filtrar robôs", ["Não", "Sim"], key="conta_filtrar_robos")
+            st.divider()
+            e1, e2 = st.columns(2, gap="large")
+            with e1:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Meta de ganho) - Iniciar",
+                    ["Sim", "Não"],
+                    key="conta_encerrar_meta_ganho",
+                )
+            with e2:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Meta de ganho) - Finalizar",
+                    ["Nao usar", "Sim", "Não"],
+                    key="final_conta_encerrar_meta_ganho",
+                )
 
-        id1, id2 = st.columns(2)
-        with id1:
-            st.number_input("ID mínimo", min_value=0, step=1, key="conta_id_minimo")
-        with id2:
-            st.number_input("ID máximo", min_value=0, step=1, key="conta_id_maximo")
+            e3, e4 = st.columns(2, gap="large")
+            with e3:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Limite de perda) - Iniciar",
+                    ["Sim", "Não"],
+                    key="conta_encerrar_limite_perda",
+                )
+            with e4:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Limite de perda) - Finalizar",
+                    ["Nao usar", "Sim", "Não"],
+                    key="final_conta_encerrar_limite_perda",
+                )
 
-        st.markdown("<h4 style='text-align: center;'>Metas financeiras (nível conta)</h4>", unsafe_allow_html=True)
+            e5, e6 = st.columns(2, gap="large")
+            with e5:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Rebaixamento) - Iniciar",
+                    ["Não", "Sim"],
+                    key="conta_encerrar_rebaixamento",
+                )
+            with e6:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Rebaixamento) - Finalizar",
+                    ["Nao usar", "Não", "Sim"],
+                    key="final_conta_encerrar_rebaixamento",
+                )
 
-        st.markdown(
-            "<p style='text-align: center;'>Os dados valem para toda a conta para execução deste robô</p>",
-            unsafe_allow_html=True,
-        )
-
-        m1, m2 = st.columns(2)
-        with m1:
-            st.number_input("Meta de ganho", min_value=0, step=1, key="conta_meta_ganho")
-        with m2:
-            st.selectbox(
-                "Encerrar no trade (Meta de ganho)",
-                ["Sim", "Não"],
-                key="conta_encerrar_meta_ganho",
-            )
-
-        p1, p2 = st.columns(2)
-        with p1:
-            st.number_input("Limite de perda", min_value=0, step=1, key="conta_limite_perda")
-        with p2:
-            st.selectbox(
-                "Encerrar no trade (Limite de perda)",
-                ["Sim", "Não"],
-                key="conta_encerrar_limite_perda",
-            )
-
-        rb1, rb2 = st.columns(2)
-        with rb1:
-            st.number_input("Rebaixamento", min_value=0, step=1, key="conta_rebaixamento")
-        with rb2:
-            st.selectbox(
-                "Encerrar no trade (Rebaixamento)",
-                ["Não", "Sim"],
-                key="conta_encerrar_rebaixamento",
-            )
-
-        rb3, rb4 = st.columns(2)
-        with rb3:
-            st.number_input("Gatilho (Rebaixamento)", min_value=0, step=1, key="conta_gatilho_rebaixamento")
-        with rb4:
-            st.number_input("Recuperação", min_value=0, step=1, key="conta_recuperacao")
-
-        rc1, rc2 = st.columns(2)
-        with rc1:
-            st.selectbox(
-                "Encerrar no trade (Recuperação)",
-                ["Não", "Sim"],
-                key="conta_encerrar_recuperacao",
-            )
-        with rc2:
-            st.number_input("Gatilho (Recuperação)", min_value=0, step=1, key="conta_gatilho_recuperacao")
+            e7, e8 = st.columns(2, gap="large")
+            with e7:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Recuperação) - Iniciar",
+                    ["Não", "Sim"],
+                    key="conta_encerrar_recuperacao",
+                )
+            with e8:
+                st.selectbox(
+                    "🧭 Encerrar no trade (Recuperação) - Finalizar",
+                    ["Nao usar", "Não", "Sim"],
+                    key="final_conta_encerrar_recuperacao",
+                )
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -3410,60 +3731,142 @@ if st.session_state.etapa == 25:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>AJUSTES FINAIS</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>25. AJUSTES FINAIS</h3>", unsafe_allow_html=True)
 
         st.markdown(
             "<p style='text-align: center;'>Selecione algumas confirmações para os ajustes finais</p>",
             unsafe_allow_html=True,
         )
 
-        opcoes_sim_nao = ["Sim", "Não"]
+        with st.container(border=True):
+            opcoes_sim_nao = ["Sim", "Não"]
+            opcoes_nao_sim = ["Não", "Sim"]
 
-        st.selectbox(
-            "Cancelar pendente de entrada se aparecer sinal oposto",
-            opcoes_sim_nao,
-            key="ajuste_cancelar_pendente_entrada_sinal_oposto",
-        )
-        st.selectbox(
-            "Reposicionar stoploss no aumento a favor da operação",
-            opcoes_sim_nao,
-            key="ajuste_reposicionar_stoploss_aumento_favor",
-        )
-        st.selectbox(
-            "Reposicionar takeprofit no aumento contra a operação",
-            opcoes_sim_nao,
-            key="ajuste_reposicionar_takeprofit_aumento_contra",
-        )
-        st.selectbox(
-            "Movimentar stoploss com base no preço médio",
-            opcoes_sim_nao,
-            key="ajuste_movimentar_stoploss_preco_medio",
-        )
-        st.selectbox(
-            "Movimentar takeprofit com base no preço médio",
-            opcoes_sim_nao,
-            key="ajuste_movimentar_takeprofit_preco_medio",
-        )
-        st.selectbox(
-            "Usar preço médio como referência das parciais",
-            opcoes_sim_nao,
-            key="ajuste_usar_preco_medio_parciais",
-        )
-        st.selectbox(
-            "Impedir sinal de saída na vela que gerou entrada",
-            opcoes_sim_nao,
-            key="ajuste_impedir_saida_vela_entrada",
-        )
-        st.selectbox(
-            "Impedir sinal de entrada na vela que gerou saída",
-            opcoes_sim_nao,
-            key="ajuste_impedir_entrada_vela_saida",
-        )
-        st.selectbox(
-            "Recalcular o preço médio com base nas saídas parciais",
-            ["Não", "Sim"],
-            key="ajuste_recalcular_preco_medio_saidas_parciais",
-        )
+            a1, a2 = st.columns(2, gap="large")
+            with a1:
+                st.selectbox(
+                    "🧾 Cancelar pendente de entrada se aparecer sinal oposto (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_cancelar_pendente_entrada_sinal_oposto",
+                )
+            with a2:
+                st.selectbox(
+                    "🧾 Cancelar pendente de entrada se aparecer sinal oposto (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_cancelar_pendente_entrada_sinal_oposto",
+                )
+
+            b1, b2 = st.columns(2, gap="large")
+            with b1:
+                st.selectbox(
+                    "🎯 Reposicionar stoploss no aumento a favor da operação (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_reposicionar_stoploss_aumento_favor",
+                )
+            with b2:
+                st.selectbox(
+                    "🎯 Reposicionar stoploss no aumento a favor da operação (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_reposicionar_stoploss_aumento_favor",
+                )
+
+            c1, c2 = st.columns(2, gap="large")
+            with c1:
+                st.selectbox(
+                    "🎯 Reposicionar takeprofit no aumento contra a operação (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_reposicionar_takeprofit_aumento_contra",
+                )
+            with c2:
+                st.selectbox(
+                    "🎯 Reposicionar takeprofit no aumento contra a operação (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_reposicionar_takeprofit_aumento_contra",
+                )
+
+            d1, d2 = st.columns(2, gap="large")
+            with d1:
+                st.selectbox(
+                    "🧠 Movimentar stoploss com base no preço médio (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_movimentar_stoploss_preco_medio",
+                )
+            with d2:
+                st.selectbox(
+                    "🧠 Movimentar stoploss com base no preço médio (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_movimentar_stoploss_preco_medio",
+                )
+
+            e1, e2 = st.columns(2, gap="large")
+            with e1:
+                st.selectbox(
+                    "🧠 Movimentar takeprofit com base no preço médio (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_movimentar_takeprofit_preco_medio",
+                )
+            with e2:
+                st.selectbox(
+                    "🧠 Movimentar takeprofit com base no preço médio (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_movimentar_takeprofit_preco_medio",
+                )
+
+            f1, f2 = st.columns(2, gap="large")
+            with f1:
+                st.selectbox(
+                    "📐 Usar preço médio como referência das parciais (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_usar_preco_medio_parciais",
+                )
+            with f2:
+                st.selectbox(
+                    "📐 Usar preço médio como referência das parciais (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_usar_preco_medio_parciais",
+                )
+
+            g1, g2 = st.columns(2, gap="large")
+            with g1:
+                st.selectbox(
+                    "🚪 Impedir sinal de saída na vela que gerou entrada (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_impedir_saida_vela_entrada",
+                )
+            with g2:
+                st.selectbox(
+                    "🚪 Impedir sinal de saída na vela que gerou entrada (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_impedir_saida_vela_entrada",
+                )
+
+            h1, h2 = st.columns(2, gap="large")
+            with h1:
+                st.selectbox(
+                    "🚪 Impedir sinal de entrada na vela que gerou saída (Iniciar)",
+                    opcoes_sim_nao,
+                    key="ajuste_impedir_entrada_vela_saida",
+                )
+            with h2:
+                st.selectbox(
+                    "🚪 Impedir sinal de entrada na vela que gerou saída (Finalizar)",
+                    ["Nao usar", *opcoes_sim_nao],
+                    key="final_ajuste_impedir_entrada_vela_saida",
+                )
+
+            i1, i2 = st.columns(2, gap="large")
+            with i1:
+                st.selectbox(
+                    "🔁 Recalcular o preço médio com base nas saídas parciais (Iniciar)",
+                    opcoes_nao_sim,
+                    key="ajuste_recalcular_preco_medio_saidas_parciais",
+                )
+            with i2:
+                st.selectbox(
+                    "🔁 Recalcular o preço médio com base nas saídas parciais (Finalizar)",
+                    ["Nao usar", *opcoes_nao_sim],
+                    key="final_ajuste_recalcular_preco_medio_saidas_parciais",
+                )
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -3483,39 +3886,87 @@ if st.session_state.etapa == 26:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
 
     with col_centro:
-        st.markdown("<h3 style='text-align: center;'>COMPLEMENTOS</h3>", unsafe_allow_html=True)
+        st.markdown("<h3 style='text-align: center;'>26. COMPLEMENTOS</h3>", unsafe_allow_html=True)
 
         st.markdown(
             "<p style='text-align: center;'>Adicione alguns complementos de ordens e sinais</p>",
             unsafe_allow_html=True,
         )
 
-        st.markdown("<h4 style='text-align: center;'>Complementos de ordens e sinais</h4>", unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown("<p class='center-note'>Legenda: 0 = Nao usar</p>", unsafe_allow_html=True)
+            st.markdown("<h4 style='text-align: center;'>Complementos de ordens e sinais</h4>", unsafe_allow_html=True)
 
-        opcoes_nao_sim = ["Não", "Sim"]
+            opcoes_nao_sim = ["Não", "Sim"]
 
-        st.selectbox(
-            "Enviar ordem para outro ativo (Cross order)",
-            opcoes_nao_sim,
-            key="comp_enviar_ordem_outro_ativo",
-        )
-        st.selectbox(
-            "Procurar entrada na vela seguinte à saída",
-            opcoes_nao_sim,
-            key="comp_procurar_entrada_vela_seguinte_saida",
-        )
-        st.selectbox(
-            "Procurar saída na vela seguinte à entrada",
-            opcoes_nao_sim,
-            key="comp_procurar_saida_vela_seguinte_entrada",
-        )
+            c1, c2 = st.columns(2, gap="large")
+            with c1:
+                st.selectbox(
+                    "📤 Enviar ordem para outro ativo (Cross order) - Iniciar",
+                    opcoes_nao_sim,
+                    key="comp_enviar_ordem_outro_ativo",
+                )
+            with c2:
+                st.selectbox(
+                    "📤 Enviar ordem para outro ativo (Cross order) - Finalizar",
+                    ["Nao usar", *opcoes_nao_sim],
+                    key="final_comp_enviar_ordem_outro_ativo",
+                )
 
-        st.number_input(
-            "Saldo de ajuste para somar com a conta",
-            min_value=0,
-            step=1,
-            key="comp_saldo_ajuste",
-        )
+            c3, c4 = st.columns(2, gap="large")
+            with c3:
+                st.selectbox(
+                    "🟢 Procurar entrada na vela seguinte à saída - Iniciar",
+                    opcoes_nao_sim,
+                    key="comp_procurar_entrada_vela_seguinte_saida",
+                )
+            with c4:
+                st.selectbox(
+                    "🟢 Procurar entrada na vela seguinte à saída - Finalizar",
+                    ["Nao usar", *opcoes_nao_sim],
+                    key="final_comp_procurar_entrada_vela_seguinte_saida",
+                )
+
+            c5, c6 = st.columns(2, gap="large")
+            with c5:
+                st.selectbox(
+                    "🔴 Procurar saída na vela seguinte à entrada - Iniciar",
+                    opcoes_nao_sim,
+                    key="comp_procurar_saida_vela_seguinte_entrada",
+                )
+            with c6:
+                st.selectbox(
+                    "🔴 Procurar saída na vela seguinte à entrada - Finalizar",
+                    ["Nao usar", *opcoes_nao_sim],
+                    key="final_comp_procurar_saida_vela_seguinte_entrada",
+                )
+
+            st.divider()
+            s1, s2, s3 = st.columns(3, gap="large")
+            with s1:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟢 Iniciar</p>", unsafe_allow_html=True)
+                st.number_input(
+                    "Saldo de ajuste para somar com a conta",
+                    min_value=0,
+                    step=1,
+                    key="comp_saldo_ajuste",
+                )
+            with s2:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🟡 Passe</p>", unsafe_allow_html=True)
+                st.number_input(
+                    "Saldo de ajuste para somar com a conta",
+                    min_value=0,
+                    step=1,
+                    key="comp_saldo_ajuste_passe",
+                )
+            with s3:
+                st.markdown("<p style='text-align: center; font-weight: 700; margin: 0 0 0.5rem 0;'>🔴 Finalizar</p>", unsafe_allow_html=True)
+                st.number_input(
+                    "Saldo de ajuste para somar com a conta",
+                    min_value=0,
+                    step=1,
+                    key="final_comp_saldo_ajuste",
+                )
 
         nav_esq, nav_dir = st.columns(2)
         with nav_esq:
@@ -3527,6 +3978,9 @@ if st.session_state.etapa == 26:
                 st.session_state.complementos_salvo = True
                 st.session_state.etapa = 27
                 st.rerun()
+
+        if st.session_state.complementos_salvo:
+            st.success("Complementos salvos.")
 
 if st.session_state.etapa == 27:
     col_esq, col_centro, col_dir = st.columns([1, 2, 1])
